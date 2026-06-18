@@ -1,0 +1,1179 @@
+{
+  "version": "7.3",
+  "data_api_version": "3.0",
+  "routing_model": {
+    "WELCOME": [
+      "NEED"
+    ],
+    "NEED": [
+      "CHOOSE_MODALITY",
+      "ATTENDANT",
+      "INFO"
+    ],
+    "CHOOSE_MODALITY": [
+      "CHOOSE_BODYPART",
+      "CHOOSE_PROCEDURE",
+      "ATTENDANT"
+    ],
+    "CHOOSE_BODYPART": [
+      "CHOOSE_PROCEDURE",
+      "ATTENDANT"
+    ],
+    "CHOOSE_PROCEDURE": [
+      "CHOOSE_SPECIFICITY",
+      "CHOOSE_PLAN",
+      "ATTENDANT"
+    ],
+    "CHOOSE_SPECIFICITY": [
+      "CHOOSE_PLAN",
+      "ATTENDANT"
+    ],
+    "CHOOSE_PLAN": [
+      "PROCEDURE_DETAILS",
+      "ATTENDANT"
+    ],
+    "PROCEDURE_DETAILS": [
+      "COLLECT_DATA",
+      "CHOOSE_MODALITY",
+      "ATTENDANT",
+      "END"
+    ],
+    "COLLECT_DATA": [
+      "CONFIRM_WALKIN",
+      "CONFIRM_APPOINTMENT"
+    ],
+    "ATTENDANT": [
+      "CONFIRM_ATTENDANT"
+    ],
+    "CONFIRM_WALKIN": [],
+    "CONFIRM_APPOINTMENT": [],
+    "CONFIRM_ATTENDANT": [],
+    "INFO": [],
+    "END": []
+  },
+  "screens": [
+    {
+      "id": "WELCOME",
+      "title": "Medicinarte",
+      "data": {},
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "Form",
+            "name": "welcome_form",
+            "children": [
+              {
+                "type": "TextHeading",
+                "text": "Bem-vindo(a) à Medicinarte"
+              },
+              {
+                "type": "TextBody",
+                "text": "Diagnóstico por imagem em Rio Branco/AC. Posso te ajudar a consultar exames, valores e preparos, e a solicitar seu agendamento."
+              },
+              {
+                "type": "TextCaption",
+                "text": "Trav. Antunes de Alencar, 152 — Bosque • (68) 3223-3830 / (68) 99980-3830\nSeg–Sex 07:00–22:00 • Sáb 07:00–20:00 • Dom: fechado."
+              },
+              {
+                "type": "Footer",
+                "label": "Começar",
+                "on-click-action": {
+                  "name": "navigate",
+                  "next": {
+                    "type": "screen",
+                    "name": "NEED"
+                  },
+                  "payload": {}
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "NEED",
+      "title": "Como podemos ajudar?",
+      "data": {},
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "Form",
+            "name": "need_form",
+            "children": [
+              {
+                "type": "TextHeading",
+                "text": "Como podemos ajudar você hoje?"
+              },
+              {
+                "type": "RadioButtonsGroup",
+                "label": "Selecione uma opção",
+                "name": "need",
+                "data-source": [
+                  {
+                    "id": "agendar_exame",
+                    "title": "Agendar / consultar exame"
+                  },
+                  {
+                    "id": "resultado_exame",
+                    "title": "Resultado de exame"
+                  },
+                  {
+                    "id": "informacoes",
+                    "title": "Informações gerais"
+                  }
+                ],
+                "required": true,
+                "on-select-action": {
+                  "name": "data_exchange",
+                  "payload": {
+                    "need": "${form.need}"
+                  }
+                }
+              },
+              {
+                "type": "Footer",
+                "label": "Falar com atendente",
+                "on-click-action": {
+                  "name": "data_exchange",
+                  "payload": {
+                    "decision": "atendente"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "CHOOSE_MODALITY",
+      "title": "Modalidade",
+      "data": {
+        "modalities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              }
+            }
+          },
+          "__example__": [
+            {
+              "id": "mamografia",
+              "title": "Mamografia"
+            },
+            {
+              "id": "ressonancia",
+              "title": "Ressonância"
+            },
+            {
+              "id": "tomografia",
+              "title": "Tomografia"
+            },
+            {
+              "id": "ultrassom",
+              "title": "Ultrassom"
+            },
+            {
+              "id": "raio-x",
+              "title": "Raio-X"
+            }
+          ]
+        }
+      },
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "Form",
+            "name": "choose_modality_form",
+            "children": [
+              {
+                "type": "TextHeading",
+                "text": "Qual tipo de exame você procura?"
+              },
+              {
+                "type": "RadioButtonsGroup",
+                "label": "Modalidade",
+                "name": "modality",
+                "data-source": "${data.modalities}",
+                "required": true,
+                "on-select-action": {
+                  "name": "data_exchange",
+                  "payload": {
+                    "modality": "${form.modality}"
+                  }
+                }
+              },
+              {
+                "type": "Footer",
+                "label": "Falar com atendente",
+                "on-click-action": {
+                  "name": "data_exchange",
+                  "payload": {
+                    "decision": "atendente"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "CHOOSE_BODYPART",
+      "title": "Parte do corpo",
+      "data": {
+        "modality": {
+          "type": "string",
+          "__example__": "ressonancia"
+        },
+        "bodyparts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              }
+            }
+          },
+          "__example__": [
+            {
+              "id": "cabeca_pescoco",
+              "title": "Cabeça e pescoço"
+            },
+            {
+              "id": "coluna",
+              "title": "Coluna"
+            },
+            {
+              "id": "membros",
+              "title": "Membros e articulações"
+            },
+            {
+              "id": "abdome_pelve",
+              "title": "Abdome e pelve"
+            },
+            {
+              "id": "outras",
+              "title": "Outras partes / exames"
+            }
+          ]
+        }
+      },
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "Form",
+            "name": "choose_bodypart_form",
+            "children": [
+              {
+                "type": "TextHeading",
+                "text": "Qual região do corpo?"
+              },
+              {
+                "type": "TextBody",
+                "text": "Selecione para ver os exames disponíveis."
+              },
+              {
+                "type": "RadioButtonsGroup",
+                "label": "Parte do corpo",
+                "name": "bodypart",
+                "data-source": "${data.bodyparts}",
+                "required": true,
+                "on-select-action": {
+                  "name": "data_exchange",
+                  "payload": {
+                    "modality": "${data.modality}",
+                    "bodypart": "${form.bodypart}"
+                  }
+                }
+              },
+              {
+                "type": "Footer",
+                "label": "Falar com atendente",
+                "on-click-action": {
+                  "name": "data_exchange",
+                  "payload": {
+                    "decision": "atendente"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "CHOOSE_PROCEDURE",
+      "title": "Procedimento",
+      "data": {
+        "modality": {
+          "type": "string",
+          "__example__": "ressonancia"
+        },
+        "bodypart": {
+          "type": "string",
+          "__example__": "coluna"
+        },
+        "procedures": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              }
+            }
+          },
+          "__example__": [
+            {
+              "id": "ressonancia__coluna__rnm_coluna_cervical",
+              "title": "RNM Coluna cervical"
+            },
+            {
+              "id": "ressonancia__coluna__rnm_coluna_total",
+              "title": "RNM Coluna total"
+            }
+          ]
+        }
+      },
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "Form",
+            "name": "choose_procedure_form",
+            "children": [
+              {
+                "type": "TextHeading",
+                "text": "Escolha o procedimento"
+              },
+              {
+                "type": "RadioButtonsGroup",
+                "label": "Procedimento",
+                "name": "base",
+                "data-source": "${data.procedures}",
+                "required": true,
+                "on-select-action": {
+                  "name": "data_exchange",
+                  "payload": {
+                    "modality": "${data.modality}",
+                    "bodypart": "${data.bodypart}",
+                    "base": "${form.base}"
+                  }
+                }
+              },
+              {
+                "type": "Footer",
+                "label": "Falar com atendente",
+                "on-click-action": {
+                  "name": "data_exchange",
+                  "payload": {
+                    "decision": "atendente"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "CHOOSE_SPECIFICITY",
+      "title": "Especificação",
+      "data": {
+        "base": {
+          "type": "string",
+          "__example__": "ressonancia__coluna__rnm_coluna_cervical"
+        },
+        "base_title": {
+          "type": "string",
+          "__example__": "RNM Coluna cervical"
+        },
+        "specificities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              }
+            }
+          },
+          "__example__": [
+            {
+              "id": "a__sem",
+              "title": "Sem Contraste"
+            },
+            {
+              "id": "a__com",
+              "title": "Com Contraste"
+            }
+          ]
+        }
+      },
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "Form",
+            "name": "choose_specificity_form",
+            "children": [
+              {
+                "type": "TextHeading",
+                "text": "${data.base_title}"
+              },
+              {
+                "type": "TextBody",
+                "text": "Selecione a especificação do exame."
+              },
+              {
+                "type": "RadioButtonsGroup",
+                "label": "Opção",
+                "name": "variant",
+                "data-source": "${data.specificities}",
+                "required": true,
+                "on-select-action": {
+                  "name": "data_exchange",
+                  "payload": {
+                    "variant": "${form.variant}"
+                  }
+                }
+              },
+              {
+                "type": "Footer",
+                "label": "Falar com atendente",
+                "on-click-action": {
+                  "name": "data_exchange",
+                  "payload": {
+                    "decision": "atendente"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "CHOOSE_PLAN",
+      "title": "Plano de saúde",
+      "data": {
+        "variant": {
+          "type": "string",
+          "__example__": "ressonancia__coluna__rnm_coluna_cervical__sem_contraste"
+        },
+        "planos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              }
+            }
+          },
+          "__example__": [
+            {
+              "id": "none",
+              "title": "Não possuo plano de saúde"
+            },
+            {
+              "id": "Bradesco",
+              "title": "Bradesco"
+            },
+            {
+              "id": "OAB",
+              "title": "OAB"
+            }
+          ]
+        }
+      },
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "Form",
+            "name": "choose_plan_form",
+            "children": [
+              {
+                "type": "TextHeading",
+                "text": "Você possui plano de saúde?"
+              },
+              {
+                "type": "TextBody",
+                "text": "Selecione seu plano ou a primeira opção, se não tiver."
+              },
+              {
+                "type": "RadioButtonsGroup",
+                "label": "Plano",
+                "name": "plano",
+                "data-source": "${data.planos}",
+                "required": true,
+                "on-select-action": {
+                  "name": "data_exchange",
+                  "payload": {
+                    "variant": "${data.variant}",
+                    "plano": "${form.plano}"
+                  }
+                }
+              },
+              {
+                "type": "Footer",
+                "label": "Falar com atendente",
+                "on-click-action": {
+                  "name": "data_exchange",
+                  "payload": {
+                    "decision": "atendente"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "PROCEDURE_DETAILS",
+      "title": "Detalhes do exame",
+      "data": {
+        "procedure_name": {
+          "type": "string",
+          "__example__": "RNM Coluna cervical – Sem Contraste"
+        },
+        "header_info": {
+          "type": "string",
+          "__example__": "Valor particular: R$ 1100\nParcelamento: Parcelamento em até 6 vezes sem juros\nFormas de pagamento: Pix, cartão de crédito, cartão de débito e dinheiro."
+        },
+        "scheduling_info": {
+          "type": "string",
+          "__example__": "🗓️ Agendamento por hora marcada (com horário a confirmar)."
+        },
+        "preparation": {
+          "type": "string",
+          "__example__": "• Informar uso de marca-passo, próteses ou metais no corpo. ..."
+        },
+        "contraindications": {
+          "type": "string",
+          "__example__": "• Marcapasso cardíaco; • Implante metálico; ..."
+        },
+        "documents": {
+          "type": "string",
+          "__example__": "Documento de identificação e pedido médico."
+        },
+        "delivery_time": {
+          "type": "string",
+          "__example__": "Imagens no mesmo dia e laudo em 3 dias úteis."
+        },
+        "age_range": {
+          "type": "string",
+          "__example__": "Adultos e crianças"
+        },
+        "duration": {
+          "type": "string",
+          "__example__": "30 minutos"
+        },
+        "variant": {
+          "type": "string",
+          "__example__": "ressonancia__coluna__rnm_coluna_cervical__sem_contraste"
+        },
+        "plano": {
+          "type": "string",
+          "__example__": "none"
+        },
+        "has_plan": {
+          "type": "boolean",
+          "__example__": false
+        },
+        "is_scheduled": {
+          "type": "boolean",
+          "__example__": true
+        },
+        "scheduling_method": {
+          "type": "string",
+          "__example__": "Hora marcada"
+        },
+        "situacao": {
+          "type": "string",
+          "__example__": "1"
+        }
+      },
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "Form",
+            "name": "procedure_details_form",
+            "children": [
+              {
+                "type": "TextHeading",
+                "text": "${data.procedure_name}"
+              },
+              {
+                "type": "TextBody",
+                "text": "${data.header_info}"
+              },
+              {
+                "type": "TextBody",
+                "text": "${data.scheduling_info}"
+              },
+              {
+                "type": "TextSubheading",
+                "text": "Informações do exame"
+              },
+              {
+                "type": "TextBody",
+                "text": "Preparo: ${data.preparation}"
+              },
+              {
+                "type": "TextBody",
+                "text": "Contraindicações: ${data.contraindications}"
+              },
+              {
+                "type": "TextBody",
+                "text": "Documentos: ${data.documents}"
+              },
+              {
+                "type": "TextBody",
+                "text": "Prazo de entrega: ${data.delivery_time}"
+              },
+              {
+                "type": "TextBody",
+                "text": "Faixa etária: ${data.age_range}"
+              },
+              {
+                "type": "TextBody",
+                "text": "Duração: ${data.duration}"
+              },
+              {
+                "type": "RadioButtonsGroup",
+                "label": "O que deseja fazer?",
+                "name": "decision",
+                "data-source": [
+                  {
+                    "id": "agendar",
+                    "title": "Agendar este exame"
+                  },
+                  {
+                    "id": "consultar_outro",
+                    "title": "Consultar outro procedimento"
+                  },
+                  {
+                    "id": "encerrar",
+                    "title": "Encerrar"
+                  }
+                ],
+                "required": true
+              },
+              {
+                "type": "Footer",
+                "label": "Continuar",
+                "on-click-action": {
+                  "name": "data_exchange",
+                  "payload": {
+                    "decision": "${form.decision}",
+                    "variant": "${data.variant}",
+                    "plano": "${data.plano}",
+                    "has_plan": "${data.has_plan}",
+                    "is_scheduled": "${data.is_scheduled}",
+                    "scheduling_method": "${data.scheduling_method}",
+                    "procedure_name": "${data.procedure_name}"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "COLLECT_DATA",
+      "title": "Dados para agendamento",
+      "data": {
+        "procedure_name": {
+          "type": "string",
+          "__example__": "RNM Coluna cervical – Sem Contraste"
+        },
+        "variant": {
+          "type": "string",
+          "__example__": "x"
+        },
+        "plano": {
+          "type": "string",
+          "__example__": "none"
+        },
+        "scheduling_method": {
+          "type": "string",
+          "__example__": "Hora marcada"
+        },
+        "has_plan": {
+          "type": "boolean",
+          "__example__": true
+        },
+        "is_scheduled": {
+          "type": "boolean",
+          "__example__": true
+        },
+        "time_slots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              }
+            }
+          },
+          "__example__": [
+            {
+              "id": "08:00",
+              "title": "08:00"
+            },
+            {
+              "id": "08:30",
+              "title": "08:30"
+            }
+          ]
+        },
+        "min_date": {
+          "type": "string",
+          "__example__": "1718596800000"
+        },
+        "max_date": {
+          "type": "string",
+          "__example__": "1726531200000"
+        },
+        "max_dob": {
+          "type": "string",
+          "__example__": "1718596800000"
+        },
+        "unavailable_dates": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "__example__": [
+            "1718942400000"
+          ]
+        }
+      },
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "Form",
+            "name": "collect_data_form",
+            "children": [
+              {
+                "type": "TextHeading",
+                "text": "Dados do paciente"
+              },
+              {
+                "type": "TextBody",
+                "text": "Exame: ${data.procedure_name}"
+              },
+              {
+                "type": "TextInput",
+                "label": "Nome completo",
+                "name": "nome",
+                "input-type": "text",
+                "required": true
+              },
+              {
+                "type": "TextInput",
+                "label": "CPF",
+                "name": "cpf",
+                "input-type": "text",
+                "required": true
+              },
+              {
+                "type": "TextInput",
+                "label": "Número da carteira do plano",
+                "name": "carteira",
+                "input-type": "text",
+                "required": false,
+                "visible": "${data.has_plan}"
+              },
+              {
+                "type": "DatePicker",
+                "label": "Data de nascimento",
+                "name": "nascimento",
+                "required": true,
+                "max-date": "${data.max_dob}"
+              },
+              {
+                "type": "DatePicker",
+                "label": "Data desejada para o exame",
+                "name": "data_agendamento",
+                "required": true,
+                "min-date": "${data.min_date}",
+                "max-date": "${data.max_date}",
+                "unavailable-dates": "${data.unavailable_dates}"
+              },
+              {
+                "type": "Dropdown",
+                "label": "Horário (apenas hora marcada)",
+                "name": "horario",
+                "data-source": "${data.time_slots}",
+                "required": false,
+                "visible": "${data.is_scheduled}"
+              },
+              {
+                "type": "TextCaption",
+                "text": "Usaremos este número do WhatsApp como contato de referência."
+              },
+              {
+                "type": "Footer",
+                "label": "Confirmar",
+                "on-click-action": {
+                  "name": "data_exchange",
+                  "payload": {
+                    "nome": "${form.nome}",
+                    "cpf": "${form.cpf}",
+                    "carteira": "${form.carteira}",
+                    "nascimento": "${form.nascimento}",
+                    "data_agendamento": "${form.data_agendamento}",
+                    "horario": "${form.horario}",
+                    "is_scheduled": "${data.is_scheduled}",
+                    "procedure_name": "${data.procedure_name}",
+                    "plano": "${data.plano}",
+                    "scheduling_method": "${data.scheduling_method}"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "CONFIRM_WALKIN",
+      "title": "Solicitação registrada",
+      "data": {
+        "procedure_name": {
+          "type": "string",
+          "__example__": "Mamografia bilateral digital"
+        },
+        "name": {
+          "type": "string",
+          "__example__": "Maria da Silva"
+        },
+        "appointment_day": {
+          "type": "string",
+          "__example__": "20/06/2026 (sábado)"
+        },
+        "business_hours": {
+          "type": "string",
+          "__example__": "07:00 às 20:00"
+        },
+        "cpf": {
+          "type": "string",
+          "__example__": "000.000.000-00"
+        },
+        "carteira": {
+          "type": "string",
+          "__example__": ""
+        },
+        "nascimento": {
+          "type": "string",
+          "__example__": "01/01/1990"
+        }
+      },
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "Form",
+            "name": "confirm_walkin_form",
+            "children": [
+              {
+                "type": "TextHeading",
+                "text": "Tudo certo, ${data.name}!"
+              },
+              {
+                "type": "TextBody",
+                "text": "Exame: ${data.procedure_name}\nDia escolhido: ${data.appointment_day}\nHorário de funcionamento: ${data.business_hours}\nAtendimento por ordem de chegada."
+              },
+              {
+                "type": "TextCaption",
+                "text": "Leve um documento de identificação e o pedido médico. Dúvidas: (68) 3223-3830."
+              },
+              {
+                "type": "Footer",
+                "label": "Concluir",
+                "on-click-action": {
+                  "name": "complete",
+                  "payload": {
+                    "procedure_name": "${data.procedure_name}",
+                    "name": "${data.name}",
+                    "appointment_day": "${data.appointment_day}"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "terminal": true
+    },
+    {
+      "id": "CONFIRM_APPOINTMENT",
+      "title": "Solicitação enviada",
+      "data": {
+        "procedure_name": {
+          "type": "string",
+          "__example__": "RNM Coluna cervical – Sem Contraste"
+        },
+        "name": {
+          "type": "string",
+          "__example__": "Maria da Silva"
+        },
+        "appointment_day": {
+          "type": "string",
+          "__example__": "23/06/2026 (terça-feira)"
+        },
+        "horario": {
+          "type": "string",
+          "__example__": "08:30"
+        }
+      },
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "Form",
+            "name": "confirm_appointment_form",
+            "children": [
+              {
+                "type": "TextHeading",
+                "text": "Muito obrigado pelas informações, ${data.name}!"
+              },
+              {
+                "type": "TextBody",
+                "text": "Em breve um de nossos consultores confirmará se o horário selecionado está disponível."
+              },
+              {
+                "type": "TextBody",
+                "text": "Exame: ${data.procedure_name}\nData desejada: ${data.appointment_day}\nHorário desejado: ${data.horario}"
+              },
+              {
+                "type": "Footer",
+                "label": "Concluir",
+                "on-click-action": {
+                  "name": "complete",
+                  "payload": {
+                    "procedure_name": "${data.procedure_name}",
+                    "name": "${data.name}"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "terminal": true
+    },
+    {
+      "id": "ATTENDANT",
+      "title": "Falar com atendente",
+      "data": {
+        "reason": {
+          "type": "string",
+          "__example__": "Falar com atendente"
+        }
+      },
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "Form",
+            "name": "attendant_form",
+            "children": [
+              {
+                "type": "TextHeading",
+                "text": "Vamos te encaminhar a um consultor"
+              },
+              {
+                "type": "TextBody",
+                "text": "Motivo: ${data.reason}."
+              },
+              {
+                "type": "TextBody",
+                "text": "Deixe seu nome que um de nossos consultores responderá diretamente por aqui, neste WhatsApp."
+              },
+              {
+                "type": "TextInput",
+                "label": "Nome completo",
+                "name": "nome",
+                "input-type": "text",
+                "required": true
+              },
+              {
+                "type": "Footer",
+                "label": "Enviar",
+                "on-click-action": {
+                  "name": "data_exchange",
+                  "payload": {
+                    "nome": "${form.nome}"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "CONFIRM_ATTENDANT",
+      "title": "Encaminhado",
+      "data": {
+        "name": {
+          "type": "string",
+          "__example__": "Maria da Silva"
+        }
+      },
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "Form",
+            "name": "confirm_attendant_form",
+            "children": [
+              {
+                "type": "TextHeading",
+                "text": "Obrigado, ${data.name}!"
+              },
+              {
+                "type": "TextBody",
+                "text": "Um de nossos consultores responderá diretamente por aqui, neste WhatsApp, em breve."
+              },
+              {
+                "type": "TextCaption",
+                "text": "Horário de atendimento: Seg–Sex 07:00–22:00 • Sáb 07:00–20:00."
+              },
+              {
+                "type": "Footer",
+                "label": "Concluir",
+                "on-click-action": {
+                  "name": "complete",
+                  "payload": {
+                    "name": "${data.name}"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "terminal": true
+    },
+    {
+      "id": "INFO",
+      "title": "Informações",
+      "data": {},
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "Form",
+            "name": "info_form",
+            "children": [
+              {
+                "type": "TextHeading",
+                "text": "Medicinarte — Informações"
+              },
+              {
+                "type": "TextBody",
+                "text": "Endereço: Travessa Antunes de Alencar, 152 — Bosque — CEP 69900-481, Rio Branco/AC."
+              },
+              {
+                "type": "TextBody",
+                "text": "Telefones: (68) 3223-3830 / (68) 99980-3830."
+              },
+              {
+                "type": "TextBody",
+                "text": "Horário de funcionamento:\nSegunda a sexta: 07:00 às 22:00\nSábado: 07:00 às 20:00\nDomingo: fechado."
+              },
+              {
+                "type": "Footer",
+                "label": "Concluir",
+                "on-click-action": {
+                  "name": "complete",
+                  "payload": {
+                    "status": "info"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "terminal": true
+    },
+    {
+      "id": "END",
+      "title": "Atendimento encerrado",
+      "data": {},
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "Form",
+            "name": "end_form",
+            "children": [
+              {
+                "type": "TextHeading",
+                "text": "Obrigado por falar com a Medicinarte"
+              },
+              {
+                "type": "TextBody",
+                "text": "Sempre que precisar consultar exames, valores ou agendar, estamos à disposição."
+              },
+              {
+                "type": "TextCaption",
+                "text": "(68) 3223-3830 / (68) 99980-3830."
+              },
+              {
+                "type": "Footer",
+                "label": "Encerrar",
+                "on-click-action": {
+                  "name": "complete",
+                  "payload": {
+                    "status": "encerrado"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "terminal": true
+    }
+  ]
+}

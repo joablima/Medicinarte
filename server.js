@@ -6,7 +6,9 @@ const app = express();
 // guarda o corpo bruto para validar a assinatura do app
 app.use(express.json({ verify: (req, _res, buf) => { req.rawBody = buf; } }));
 
-const { PRIVATE_KEY, PASSPHRASE = "", APP_SECRET = "", PORT = 3000 } = process.env;
+const { PASSPHRASE = "", APP_SECRET = "", PORT = 3000 } = process.env;
+// aceita a chave com quebras reais OU com \n literais (formato comum em variáveis de ambiente)
+const PRIVATE_KEY = (process.env.PRIVATE_KEY || "").replace(/\\n/g, "\n");
 
 app.get("/", (_req, res) => res.status(200).send("Endpoint do WhatsApp Flow da Medicinarte no ar."));
 
