@@ -31,8 +31,7 @@ function isValidCPF(cpf){cpf=onlyDigits(cpf);
   let d2=(sum*10)%11; if(d2===10) d2=0; return d2===parseInt(cpf[10],10);
 }
 function formatCPF(cpf){cpf=onlyDigits(cpf); return cpf.length===11?`${cpf.slice(0,3)}.${cpf.slice(3,6)}.${cpf.slice(6,9)}-${cpf.slice(9)}`:cpf;}
-const collectData = ext => ({ time_slots:timeSlots(), max_dob:ymd(todayUTC()), ...dateLimits(),
-  has_error:false, error_message:"Confira os dados informados.", v_nome:"", v_cpf:"", v_carteira:"", ...ext });
+const collectData = ext => ({ time_slots:timeSlots(), max_dob:ymd(todayUTC()), ...dateLimits(), ...ext });
 const short = t => (t && t.length>30) ? t.slice(0,29)+"…" : t;
 const opt = arr => (arr||[]).map(o => ({ id:o.id, title:short(o.title) }));
 const ATD = { id:"atendente", title:"Falar com atendente" };
@@ -108,8 +107,7 @@ function getNextScreen(body){
         return {screen:"COLLECT_DATA",data:collectData({
           procedure_name:data.procedure_name,plano:data.plano,
           has_plan:!!data.plano&&data.plano!=="none",is_scheduled:isSched,scheduling_method:data.scheduling_method,
-          has_error:true,error_message:"❌ CPF inválido. Confira e digite novamente (apenas os 11 números).",
-          v_nome:data.nome||"",v_cpf:data.cpf||"",v_carteira:data.carteira||""})};
+          error_message:"❌ CPF inválido. Confira e digite novamente (apenas os 11 números)."})};
       }
       const common={procedure_name:data.procedure_name,name:data.nome||"",cpf:formatCPF(data.cpf),carteira:data.carteira||"",
         nascimento:fmtDate(data.nascimento),appointment_day:fmtDay(data.data_agendamento)};

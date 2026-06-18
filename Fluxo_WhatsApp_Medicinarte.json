@@ -129,13 +129,7 @@
                     "title": "Falar com atendente"
                   }
                 ],
-                "required": true,
-                "on-select-action": {
-                  "name": "data_exchange",
-                  "payload": {
-                    "need": "${form.need}"
-                  }
-                }
+                "required": true
               },
               {
                 "type": "Footer",
@@ -213,13 +207,7 @@
                 "label": "Modalidade",
                 "name": "modality",
                 "data-source": "${data.modalities}",
-                "required": true,
-                "on-select-action": {
-                  "name": "data_exchange",
-                  "payload": {
-                    "modality": "${form.modality}"
-                  }
-                }
+                "required": true
               },
               {
                 "type": "Footer",
@@ -305,14 +293,7 @@
                 "label": "Parte do corpo",
                 "name": "bodypart",
                 "data-source": "${data.bodyparts}",
-                "required": true,
-                "on-select-action": {
-                  "name": "data_exchange",
-                  "payload": {
-                    "modality": "${data.modality}",
-                    "bodypart": "${form.bodypart}"
-                  }
-                }
+                "required": true
               },
               {
                 "type": "Footer",
@@ -387,15 +368,7 @@
                 "label": "Procedimento",
                 "name": "base",
                 "data-source": "${data.procedures}",
-                "required": true,
-                "on-select-action": {
-                  "name": "data_exchange",
-                  "payload": {
-                    "modality": "${data.modality}",
-                    "bodypart": "${data.bodypart}",
-                    "base": "${form.base}"
-                  }
-                }
+                "required": true
               },
               {
                 "type": "Footer",
@@ -475,13 +448,7 @@
                 "label": "Opção",
                 "name": "variant",
                 "data-source": "${data.specificities}",
-                "required": true,
-                "on-select-action": {
-                  "name": "data_exchange",
-                  "payload": {
-                    "variant": "${form.variant}"
-                  }
-                }
+                "required": true
               },
               {
                 "type": "Footer",
@@ -559,14 +526,7 @@
                 "label": "Plano",
                 "name": "plano",
                 "data-source": "${data.planos}",
-                "required": true,
-                "on-select-action": {
-                  "name": "data_exchange",
-                  "payload": {
-                    "variant": "${data.variant}",
-                    "plano": "${form.plano}"
-                  }
-                }
+                "required": true
               },
               {
                 "type": "Footer",
@@ -817,26 +777,6 @@
             }
           ]
         },
-        "has_error": {
-          "type": "boolean",
-          "__example__": false
-        },
-        "error_message": {
-          "type": "string",
-          "__example__": "❌ CPF inválido. Confira e digite novamente (apenas os 11 números)."
-        },
-        "v_nome": {
-          "type": "string",
-          "__example__": ""
-        },
-        "v_cpf": {
-          "type": "string",
-          "__example__": ""
-        },
-        "v_carteira": {
-          "type": "string",
-          "__example__": ""
-        },
         "min_date": {
           "type": "string",
           "__example__": "2026-06-18"
@@ -871,11 +811,6 @@
                 "text": "Dados do paciente"
               },
               {
-                "type": "TextBody",
-                "text": "${data.error_message}",
-                "visible": "${data.has_error}"
-              },
-              {
                 "type": "TextCaption",
                 "text": "Exame selecionado:"
               },
@@ -888,8 +823,7 @@
                 "label": "Nome completo",
                 "name": "nome",
                 "input-type": "text",
-                "required": true,
-                "init-value": "${data.v_nome}"
+                "required": true
               },
               {
                 "type": "TextInput",
@@ -897,17 +831,15 @@
                 "name": "cpf",
                 "input-type": "text",
                 "required": true,
-                "helper-text": "Formato: 013.444.212-10 (digite os números)",
-                "init-value": "${data.v_cpf}"
+                "helper-text": "Formato: 013.444.212-10 (digite os números)"
               },
               {
                 "type": "TextInput",
-                "label": "Número da carteira do plano",
+                "label": "Carteira do plano",
                 "name": "carteira",
                 "input-type": "text",
                 "required": false,
-                "visible": "${data.has_plan}",
-                "init-value": "${data.v_carteira}"
+                "visible": "${data.has_plan}"
               },
               {
                 "type": "DatePicker",
@@ -918,7 +850,7 @@
               },
               {
                 "type": "DatePicker",
-                "label": "Data desejada para o exame",
+                "label": "Data desejada",
                 "name": "data_agendamento",
                 "required": true,
                 "min-date": "${data.min_date}",
@@ -927,7 +859,7 @@
               },
               {
                 "type": "Dropdown",
-                "label": "Horário (apenas hora marcada)",
+                "label": "Horário",
                 "name": "horario",
                 "data-source": "${data.time_slots}",
                 "required": false,
