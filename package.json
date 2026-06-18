@@ -1,0 +1,10 @@
+{
+  "name": "medicinarte-flow-endpoint",
+  "version": "1.0.0",
+  "description": "Endpoint do WhatsApp Flow da Medicinarte (server-driven)",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" },
+  "dependencies": { "express": "^4.19.2" }
+}
