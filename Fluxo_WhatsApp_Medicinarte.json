@@ -123,6 +123,10 @@
                   {
                     "id": "informacoes",
                     "title": "Informações gerais"
+                  },
+                  {
+                    "id": "atendente",
+                    "title": "Falar com atendente"
                   }
                 ],
                 "required": true,
@@ -135,11 +139,11 @@
               },
               {
                 "type": "Footer",
-                "label": "Falar com atendente",
+                "label": "Continuar",
                 "on-click-action": {
                   "name": "data_exchange",
                   "payload": {
-                    "decision": "atendente"
+                    "need": "${form.need}"
                   }
                 }
               }
@@ -185,6 +189,10 @@
             {
               "id": "raio-x",
               "title": "Raio-X"
+            },
+            {
+              "id": "atendente",
+              "title": "Falar com atendente"
             }
           ]
         }
@@ -215,11 +223,11 @@
               },
               {
                 "type": "Footer",
-                "label": "Falar com atendente",
+                "label": "Continuar",
                 "on-click-action": {
                   "name": "data_exchange",
                   "payload": {
-                    "decision": "atendente"
+                    "modality": "${form.modality}"
                   }
                 }
               }
@@ -269,6 +277,10 @@
             {
               "id": "outras",
               "title": "Outras partes / exames"
+            },
+            {
+              "id": "atendente",
+              "title": "Falar com atendente"
             }
           ]
         }
@@ -304,11 +316,12 @@
               },
               {
                 "type": "Footer",
-                "label": "Falar com atendente",
+                "label": "Continuar",
                 "on-click-action": {
                   "name": "data_exchange",
                   "payload": {
-                    "decision": "atendente"
+                    "modality": "${data.modality}",
+                    "bodypart": "${form.bodypart}"
                   }
                 }
               }
@@ -350,6 +363,10 @@
             {
               "id": "ressonancia__coluna__rnm_coluna_total",
               "title": "RNM Coluna total"
+            },
+            {
+              "id": "atendente",
+              "title": "Falar com atendente"
             }
           ]
         }
@@ -382,11 +399,13 @@
               },
               {
                 "type": "Footer",
-                "label": "Falar com atendente",
+                "label": "Continuar",
                 "on-click-action": {
                   "name": "data_exchange",
                   "payload": {
-                    "decision": "atendente"
+                    "modality": "${data.modality}",
+                    "bodypart": "${data.bodypart}",
+                    "base": "${form.base}"
                   }
                 }
               }
@@ -428,6 +447,10 @@
             {
               "id": "a__com",
               "title": "Com Contraste"
+            },
+            {
+              "id": "atendente",
+              "title": "Falar com atendente"
             }
           ]
         }
@@ -462,11 +485,11 @@
               },
               {
                 "type": "Footer",
-                "label": "Falar com atendente",
+                "label": "Continuar",
                 "on-click-action": {
                   "name": "data_exchange",
                   "payload": {
-                    "decision": "atendente"
+                    "variant": "${form.variant}"
                   }
                 }
               }
@@ -508,6 +531,10 @@
             {
               "id": "OAB",
               "title": "OAB"
+            },
+            {
+              "id": "atendente",
+              "title": "Falar com atendente"
             }
           ]
         }
@@ -543,11 +570,12 @@
               },
               {
                 "type": "Footer",
-                "label": "Falar com atendente",
+                "label": "Continuar",
                 "on-click-action": {
                   "name": "data_exchange",
                   "payload": {
-                    "decision": "atendente"
+                    "variant": "${data.variant}",
+                    "plano": "${form.plano}"
                   }
                 }
               }
@@ -572,9 +600,29 @@
           "type": "string",
           "__example__": "🗓️ Agendamento por hora marcada (horário a confirmar com a clínica)."
         },
-        "info_text": {
+        "preparation": {
           "type": "string",
-          "__example__": "Preparo:\n• ...\n\nContraindicações:\n• ...\n\nDocumentos: Documento de identificação e pedido médico.\n\nPrazo de entrega: Imagens no mesmo dia e laudo em 3 dias úteis.\n\nFaixa etária: Adultos e crianças\n\nDuração: 30 minutos"
+          "__example__": "• Informar uso de marca-passo, próteses ou metais no corpo."
+        },
+        "contraindications": {
+          "type": "string",
+          "__example__": "• Marcapasso cardíaco; • Implante metálico;"
+        },
+        "documents": {
+          "type": "string",
+          "__example__": "Documento de identificação e pedido médico."
+        },
+        "delivery_time": {
+          "type": "string",
+          "__example__": "Imagens no mesmo dia e laudo em 3 dias úteis."
+        },
+        "age_range": {
+          "type": "string",
+          "__example__": "Adultos e crianças"
+        },
+        "duration": {
+          "type": "string",
+          "__example__": "30 minutos"
         },
         "variant": {
           "type": "string",
@@ -625,8 +673,52 @@
                 "text": "Informações do exame"
               },
               {
+                "type": "TextCaption",
+                "text": "Preparo obrigatório"
+              },
+              {
                 "type": "TextBody",
-                "text": "${data.info_text}"
+                "text": "${data.preparation}"
+              },
+              {
+                "type": "TextCaption",
+                "text": "Contraindicações"
+              },
+              {
+                "type": "TextBody",
+                "text": "${data.contraindications}"
+              },
+              {
+                "type": "TextCaption",
+                "text": "Documentos necessários"
+              },
+              {
+                "type": "TextBody",
+                "text": "${data.documents}"
+              },
+              {
+                "type": "TextCaption",
+                "text": "Prazo de entrega"
+              },
+              {
+                "type": "TextBody",
+                "text": "${data.delivery_time}"
+              },
+              {
+                "type": "TextCaption",
+                "text": "Faixa etária atendida"
+              },
+              {
+                "type": "TextBody",
+                "text": "${data.age_range}"
+              },
+              {
+                "type": "TextCaption",
+                "text": "Duração estimada"
+              },
+              {
+                "type": "TextBody",
+                "text": "${data.duration}"
               },
               {
                 "type": "RadioButtonsGroup",
@@ -644,6 +736,10 @@
                   {
                     "id": "encerrar",
                     "title": "Encerrar"
+                  },
+                  {
+                    "id": "atendente",
+                    "title": "Falar com atendente"
                   }
                 ],
                 "required": true
@@ -721,17 +817,37 @@
             }
           ]
         },
+        "has_error": {
+          "type": "boolean",
+          "__example__": false
+        },
+        "error_message": {
+          "type": "string",
+          "__example__": "❌ CPF inválido. Confira e digite novamente (apenas os 11 números)."
+        },
+        "v_nome": {
+          "type": "string",
+          "__example__": ""
+        },
+        "v_cpf": {
+          "type": "string",
+          "__example__": ""
+        },
+        "v_carteira": {
+          "type": "string",
+          "__example__": ""
+        },
         "min_date": {
           "type": "string",
-          "__example__": "1718596800000"
+          "__example__": "2026-06-18"
         },
         "max_date": {
           "type": "string",
-          "__example__": "1726531200000"
+          "__example__": "2026-09-16"
         },
         "max_dob": {
           "type": "string",
-          "__example__": "1718596800000"
+          "__example__": "2026-06-18"
         },
         "unavailable_dates": {
           "type": "array",
@@ -739,7 +855,7 @@
             "type": "string"
           },
           "__example__": [
-            "1718942400000"
+            "2026-06-21"
           ]
         }
       },
@@ -755,6 +871,11 @@
                 "text": "Dados do paciente"
               },
               {
+                "type": "TextBody",
+                "text": "${data.error_message}",
+                "visible": "${data.has_error}"
+              },
+              {
                 "type": "TextCaption",
                 "text": "Exame selecionado:"
               },
@@ -767,14 +888,17 @@
                 "label": "Nome completo",
                 "name": "nome",
                 "input-type": "text",
-                "required": true
+                "required": true,
+                "init-value": "${data.v_nome}"
               },
               {
                 "type": "TextInput",
                 "label": "CPF",
                 "name": "cpf",
                 "input-type": "text",
-                "required": true
+                "required": true,
+                "helper-text": "Formato: 013.444.212-10 (digite os números)",
+                "init-value": "${data.v_cpf}"
               },
               {
                 "type": "TextInput",
@@ -782,7 +906,8 @@
                 "name": "carteira",
                 "input-type": "text",
                 "required": false,
-                "visible": "${data.has_plan}"
+                "visible": "${data.has_plan}",
+                "init-value": "${data.v_carteira}"
               },
               {
                 "type": "DatePicker",
@@ -840,17 +965,33 @@
       "id": "CONFIRM_WALKIN",
       "title": "Solicitação registrada",
       "data": {
-        "greeting": {
+        "procedure_name": {
           "type": "string",
-          "__example__": "Tudo certo, Maria da Silva!"
-        },
-        "summary": {
-          "type": "string",
-          "__example__": "Exame: Mamografia bilateral digital\nDia escolhido: 20/06/2026 (sábado)\nHorário de funcionamento: 07:00 às 20:00\nAtendimento por ordem de chegada."
+          "__example__": "Mamografia bilateral digital"
         },
         "name": {
           "type": "string",
           "__example__": "Maria da Silva"
+        },
+        "appointment_day": {
+          "type": "string",
+          "__example__": "20/06/2026 (sábado)"
+        },
+        "business_hours": {
+          "type": "string",
+          "__example__": "07:00 às 20:00"
+        },
+        "cpf": {
+          "type": "string",
+          "__example__": "000.000.000-00"
+        },
+        "carteira": {
+          "type": "string",
+          "__example__": ""
+        },
+        "nascimento": {
+          "type": "string",
+          "__example__": "01/01/1990"
         }
       },
       "layout": {
@@ -862,11 +1003,43 @@
             "children": [
               {
                 "type": "TextHeading",
-                "text": "${data.greeting}"
+                "text": "Agendamento registrado!"
               },
               {
                 "type": "TextBody",
-                "text": "${data.summary}"
+                "text": "Obrigado pela preferência! Compareça no dia escolhido, dentro do horário de funcionamento — o atendimento é por ordem de chegada."
+              },
+              {
+                "type": "TextCaption",
+                "text": "Paciente"
+              },
+              {
+                "type": "TextBody",
+                "text": "${data.name}"
+              },
+              {
+                "type": "TextCaption",
+                "text": "Exame"
+              },
+              {
+                "type": "TextBody",
+                "text": "${data.procedure_name}"
+              },
+              {
+                "type": "TextCaption",
+                "text": "Dia escolhido"
+              },
+              {
+                "type": "TextBody",
+                "text": "${data.appointment_day}"
+              },
+              {
+                "type": "TextCaption",
+                "text": "Horário de funcionamento"
+              },
+              {
+                "type": "TextBody",
+                "text": "${data.business_hours}"
               },
               {
                 "type": "TextCaption",
@@ -892,17 +1065,33 @@
       "id": "CONFIRM_APPOINTMENT",
       "title": "Solicitação enviada",
       "data": {
-        "greeting": {
+        "procedure_name": {
           "type": "string",
-          "__example__": "Muito obrigado pelas informações, Maria da Silva!"
-        },
-        "summary": {
-          "type": "string",
-          "__example__": "Exame: RNM Coluna cervical – Sem Contraste\nData desejada: 23/06/2026 (terça-feira)\nHorário desejado: 08:30"
+          "__example__": "RNM Coluna cervical – Sem Contraste"
         },
         "name": {
           "type": "string",
           "__example__": "Maria da Silva"
+        },
+        "appointment_day": {
+          "type": "string",
+          "__example__": "23/06/2026 (terça-feira)"
+        },
+        "horario": {
+          "type": "string",
+          "__example__": "08:30"
+        },
+        "cpf": {
+          "type": "string",
+          "__example__": "000.000.000-00"
+        },
+        "carteira": {
+          "type": "string",
+          "__example__": "123456"
+        },
+        "nascimento": {
+          "type": "string",
+          "__example__": "01/01/1990"
         }
       },
       "layout": {
@@ -914,15 +1103,43 @@
             "children": [
               {
                 "type": "TextHeading",
-                "text": "${data.greeting}"
+                "text": "Solicitação recebida!"
               },
               {
                 "type": "TextBody",
-                "text": "Em breve um de nossos consultores confirmará se o horário selecionado está disponível."
+                "text": "Obrigado pela preferência! Posteriormente, um de nossos atendentes entrará em contato para confirmar o atendimento no horário selecionado."
+              },
+              {
+                "type": "TextCaption",
+                "text": "Paciente"
               },
               {
                 "type": "TextBody",
-                "text": "${data.summary}"
+                "text": "${data.name}"
+              },
+              {
+                "type": "TextCaption",
+                "text": "Exame"
+              },
+              {
+                "type": "TextBody",
+                "text": "${data.procedure_name}"
+              },
+              {
+                "type": "TextCaption",
+                "text": "Data desejada"
+              },
+              {
+                "type": "TextBody",
+                "text": "${data.appointment_day}"
+              },
+              {
+                "type": "TextCaption",
+                "text": "Horário desejado"
+              },
+              {
+                "type": "TextBody",
+                "text": "${data.horario}"
               },
               {
                 "type": "Footer",
@@ -998,9 +1215,9 @@
       "id": "CONFIRM_ATTENDANT",
       "title": "Encaminhado",
       "data": {
-        "greeting": {
+        "name": {
           "type": "string",
-          "__example__": "Obrigado, Maria da Silva!"
+          "__example__": "Maria da Silva"
         }
       },
       "layout": {
@@ -1012,7 +1229,15 @@
             "children": [
               {
                 "type": "TextHeading",
-                "text": "${data.greeting}"
+                "text": "Recebemos seu contato!"
+              },
+              {
+                "type": "TextCaption",
+                "text": "Paciente"
+              },
+              {
+                "type": "TextBody",
+                "text": "${data.name}"
               },
               {
                 "type": "TextBody",
@@ -1028,7 +1253,7 @@
                 "on-click-action": {
                   "name": "complete",
                   "payload": {
-                    "status": "ok"
+                    "name": "${data.name}"
                   }
                 }
               }
