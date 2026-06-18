@@ -69,7 +69,7 @@
               },
               {
                 "type": "TextBody",
-                "text": "Diagnóstico por imagem em Rio Branco/AC. Posso te ajudar a consultar exames, valores e preparos, e a solicitar seu agendamento."
+                "text": "Diagnóstico por imagem em Rio Branco/AC. Posso ajudar a consultar exames, valores e preparos, e a solicitar seu agendamento."
               },
               {
                 "type": "TextCaption",
@@ -401,7 +401,7 @@
       "data": {
         "base": {
           "type": "string",
-          "__example__": "ressonancia__coluna__rnm_coluna_cervical"
+          "__example__": "x"
         },
         "base_title": {
           "type": "string",
@@ -481,7 +481,7 @@
       "data": {
         "variant": {
           "type": "string",
-          "__example__": "ressonancia__coluna__rnm_coluna_cervical__sem_contraste"
+          "__example__": "x"
         },
         "planos": {
           "type": "array",
@@ -570,35 +570,15 @@
         },
         "scheduling_info": {
           "type": "string",
-          "__example__": "🗓️ Agendamento por hora marcada (com horário a confirmar)."
+          "__example__": "🗓️ Agendamento por hora marcada (horário a confirmar com a clínica)."
         },
-        "preparation": {
+        "info_text": {
           "type": "string",
-          "__example__": "• Informar uso de marca-passo, próteses ou metais no corpo. ..."
-        },
-        "contraindications": {
-          "type": "string",
-          "__example__": "• Marcapasso cardíaco; • Implante metálico; ..."
-        },
-        "documents": {
-          "type": "string",
-          "__example__": "Documento de identificação e pedido médico."
-        },
-        "delivery_time": {
-          "type": "string",
-          "__example__": "Imagens no mesmo dia e laudo em 3 dias úteis."
-        },
-        "age_range": {
-          "type": "string",
-          "__example__": "Adultos e crianças"
-        },
-        "duration": {
-          "type": "string",
-          "__example__": "30 minutos"
+          "__example__": "Preparo:\n• ...\n\nContraindicações:\n• ...\n\nDocumentos: Documento de identificação e pedido médico.\n\nPrazo de entrega: Imagens no mesmo dia e laudo em 3 dias úteis.\n\nFaixa etária: Adultos e crianças\n\nDuração: 30 minutos"
         },
         "variant": {
           "type": "string",
-          "__example__": "ressonancia__coluna__rnm_coluna_cervical__sem_contraste"
+          "__example__": "x"
         },
         "plano": {
           "type": "string",
@@ -646,27 +626,7 @@
               },
               {
                 "type": "TextBody",
-                "text": "Preparo: ${data.preparation}"
-              },
-              {
-                "type": "TextBody",
-                "text": "Contraindicações: ${data.contraindications}"
-              },
-              {
-                "type": "TextBody",
-                "text": "Documentos: ${data.documents}"
-              },
-              {
-                "type": "TextBody",
-                "text": "Prazo de entrega: ${data.delivery_time}"
-              },
-              {
-                "type": "TextBody",
-                "text": "Faixa etária: ${data.age_range}"
-              },
-              {
-                "type": "TextBody",
-                "text": "Duração: ${data.duration}"
+                "text": "${data.info_text}"
               },
               {
                 "type": "RadioButtonsGroup",
@@ -795,8 +755,12 @@
                 "text": "Dados do paciente"
               },
               {
+                "type": "TextCaption",
+                "text": "Exame selecionado:"
+              },
+              {
                 "type": "TextBody",
-                "text": "Exame: ${data.procedure_name}"
+                "text": "${data.procedure_name}"
               },
               {
                 "type": "TextInput",
@@ -876,33 +840,17 @@
       "id": "CONFIRM_WALKIN",
       "title": "Solicitação registrada",
       "data": {
-        "procedure_name": {
+        "greeting": {
           "type": "string",
-          "__example__": "Mamografia bilateral digital"
+          "__example__": "Tudo certo, Maria da Silva!"
+        },
+        "summary": {
+          "type": "string",
+          "__example__": "Exame: Mamografia bilateral digital\nDia escolhido: 20/06/2026 (sábado)\nHorário de funcionamento: 07:00 às 20:00\nAtendimento por ordem de chegada."
         },
         "name": {
           "type": "string",
           "__example__": "Maria da Silva"
-        },
-        "appointment_day": {
-          "type": "string",
-          "__example__": "20/06/2026 (sábado)"
-        },
-        "business_hours": {
-          "type": "string",
-          "__example__": "07:00 às 20:00"
-        },
-        "cpf": {
-          "type": "string",
-          "__example__": "000.000.000-00"
-        },
-        "carteira": {
-          "type": "string",
-          "__example__": ""
-        },
-        "nascimento": {
-          "type": "string",
-          "__example__": "01/01/1990"
         }
       },
       "layout": {
@@ -914,11 +862,11 @@
             "children": [
               {
                 "type": "TextHeading",
-                "text": "Tudo certo, ${data.name}!"
+                "text": "${data.greeting}"
               },
               {
                 "type": "TextBody",
-                "text": "Exame: ${data.procedure_name}\nDia escolhido: ${data.appointment_day}\nHorário de funcionamento: ${data.business_hours}\nAtendimento por ordem de chegada."
+                "text": "${data.summary}"
               },
               {
                 "type": "TextCaption",
@@ -930,9 +878,7 @@
                 "on-click-action": {
                   "name": "complete",
                   "payload": {
-                    "procedure_name": "${data.procedure_name}",
-                    "name": "${data.name}",
-                    "appointment_day": "${data.appointment_day}"
+                    "name": "${data.name}"
                   }
                 }
               }
@@ -946,21 +892,17 @@
       "id": "CONFIRM_APPOINTMENT",
       "title": "Solicitação enviada",
       "data": {
-        "procedure_name": {
+        "greeting": {
           "type": "string",
-          "__example__": "RNM Coluna cervical – Sem Contraste"
+          "__example__": "Muito obrigado pelas informações, Maria da Silva!"
+        },
+        "summary": {
+          "type": "string",
+          "__example__": "Exame: RNM Coluna cervical – Sem Contraste\nData desejada: 23/06/2026 (terça-feira)\nHorário desejado: 08:30"
         },
         "name": {
           "type": "string",
           "__example__": "Maria da Silva"
-        },
-        "appointment_day": {
-          "type": "string",
-          "__example__": "23/06/2026 (terça-feira)"
-        },
-        "horario": {
-          "type": "string",
-          "__example__": "08:30"
         }
       },
       "layout": {
@@ -972,7 +914,7 @@
             "children": [
               {
                 "type": "TextHeading",
-                "text": "Muito obrigado pelas informações, ${data.name}!"
+                "text": "${data.greeting}"
               },
               {
                 "type": "TextBody",
@@ -980,7 +922,7 @@
               },
               {
                 "type": "TextBody",
-                "text": "Exame: ${data.procedure_name}\nData desejada: ${data.appointment_day}\nHorário desejado: ${data.horario}"
+                "text": "${data.summary}"
               },
               {
                 "type": "Footer",
@@ -988,7 +930,6 @@
                 "on-click-action": {
                   "name": "complete",
                   "payload": {
-                    "procedure_name": "${data.procedure_name}",
                     "name": "${data.name}"
                   }
                 }
@@ -1020,8 +961,12 @@
                 "text": "Vamos te encaminhar a um consultor"
               },
               {
+                "type": "TextCaption",
+                "text": "Motivo do contato:"
+              },
+              {
                 "type": "TextBody",
-                "text": "Motivo: ${data.reason}."
+                "text": "${data.reason}"
               },
               {
                 "type": "TextBody",
@@ -1053,9 +998,9 @@
       "id": "CONFIRM_ATTENDANT",
       "title": "Encaminhado",
       "data": {
-        "name": {
+        "greeting": {
           "type": "string",
-          "__example__": "Maria da Silva"
+          "__example__": "Obrigado, Maria da Silva!"
         }
       },
       "layout": {
@@ -1067,7 +1012,7 @@
             "children": [
               {
                 "type": "TextHeading",
-                "text": "Obrigado, ${data.name}!"
+                "text": "${data.greeting}"
               },
               {
                 "type": "TextBody",
@@ -1083,7 +1028,7 @@
                 "on-click-action": {
                   "name": "complete",
                   "payload": {
-                    "name": "${data.name}"
+                    "status": "ok"
                   }
                 }
               }
