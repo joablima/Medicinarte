@@ -19,6 +19,10 @@
   {
    "id": "raio-x",
    "title": "Raio-X"
+  },
+  {
+   "id": "biopsias",
+   "title": "Biópsias"
   }
  ],
  "planos": [
@@ -417,10 +421,6 @@
     {
      "id": "doppler",
      "title": "Doppler vascular"
-    },
-    {
-     "id": "biopsias",
-     "title": "Outras (biópsias)"
     }
    ],
    "procedures_by_bodypart": {
@@ -566,20 +566,6 @@
      {
       "id": "ultrassom__doppler__doppler_venoso_de_membros_inferiores_ou_superiores",
       "title": "Doppler venoso de membros inferiores ou superiores"
-     }
-    ],
-    "biopsias": [
-     {
-      "id": "ultrassom__biopsias__biopsia_de_tireoide_sempre_entrar_em_contato_antes",
-      "title": "Biópsia de tireoide (sempre entrar em contato antes)"
-     },
-     {
-      "id": "ultrassom__biopsias__biopsia_de_mama_sempre_entrar_em_contato_antes",
-      "title": "Biópsia de mama (sempre entrar em contato antes)"
-     },
-     {
-      "id": "ultrassom__biopsias__biopsia_de_prostata",
-      "title": "Biópsia de próstata"
      }
     ]
    }
@@ -824,6 +810,23 @@
      }
     ]
    }
+  },
+  "biopsias": {
+   "has_bodyparts": false,
+   "procedures": [
+    {
+     "id": "biopsias_____biopsia_de_tireoide_sempre_entrar_em_contato_antes",
+     "title": "Biópsia de tireoide (sempre entrar em contato antes)"
+    },
+    {
+     "id": "biopsias_____biopsia_de_mama_sempre_entrar_em_contato_antes",
+     "title": "Biópsia de mama (sempre entrar em contato antes)"
+    },
+    {
+     "id": "biopsias_____biopsia_de_prostata",
+     "title": "Biópsia de próstata"
+    }
+   ]
   }
  },
  "bases": {
@@ -2227,43 +2230,6 @@
     }
    ]
   },
-  "ultrassom__biopsias__biopsia_de_tireoide_sempre_entrar_em_contato_antes": {
-   "title": "Biópsia de tireoide (sempre entrar em contato antes)",
-   "modality": "ultrassom",
-   "bodypart": "biopsias",
-   "variants": [
-    {
-     "id": "ultrassom__biopsias__biopsia_de_tireoide_sempre_entrar_em_contato_antes__padrao",
-     "spec": "Padrão"
-    }
-   ]
-  },
-  "ultrassom__biopsias__biopsia_de_mama_sempre_entrar_em_contato_antes": {
-   "title": "Biópsia de mama (sempre entrar em contato antes)",
-   "modality": "ultrassom",
-   "bodypart": "biopsias",
-   "variants": [
-    {
-     "id": "ultrassom__biopsias__biopsia_de_mama_sempre_entrar_em_contato_antes__padrao",
-     "spec": "Padrão"
-    }
-   ]
-  },
-  "ultrassom__biopsias__biopsia_de_prostata": {
-   "title": "Biópsia de próstata",
-   "modality": "ultrassom",
-   "bodypart": "biopsias",
-   "variants": [
-    {
-     "id": "ultrassom__biopsias__biopsia_de_prostata__com_sedacao",
-     "spec": "Com sedação"
-    },
-    {
-     "id": "ultrassom__biopsias__biopsia_de_prostata__sem_sedacao",
-     "spec": "Sem sedação"
-    }
-   ]
-  },
   "raio-x__torax_abdome__abdome_agudo": {
    "title": "Abdome agudo",
    "modality": "raio-x",
@@ -2850,6 +2816,43 @@
     {
      "id": "raio-x__torax_abdome__torax__3_incidencias",
      "spec": "3 incidências"
+    }
+   ]
+  },
+  "biopsias_____biopsia_de_tireoide_sempre_entrar_em_contato_antes": {
+   "title": "Biópsia de tireoide (sempre entrar em contato antes)",
+   "modality": "biopsias",
+   "bodypart": "_",
+   "variants": [
+    {
+     "id": "biopsias_____biopsia_de_tireoide_sempre_entrar_em_contato_antes__padrao",
+     "spec": "Padrão"
+    }
+   ]
+  },
+  "biopsias_____biopsia_de_mama_sempre_entrar_em_contato_antes": {
+   "title": "Biópsia de mama (sempre entrar em contato antes)",
+   "modality": "biopsias",
+   "bodypart": "_",
+   "variants": [
+    {
+     "id": "biopsias_____biopsia_de_mama_sempre_entrar_em_contato_antes__padrao",
+     "spec": "Padrão"
+    }
+   ]
+  },
+  "biopsias_____biopsia_de_prostata": {
+   "title": "Biópsia de próstata",
+   "modality": "biopsias",
+   "bodypart": "_",
+   "variants": [
+    {
+     "id": "biopsias_____biopsia_de_prostata__com_sedacao",
+     "spec": "Com sedação"
+    },
+    {
+     "id": "biopsias_____biopsia_de_prostata__sem_sedacao",
+     "spec": "Sem sedação"
     }
    ]
   }
@@ -9239,66 +9242,6 @@
    "duration": "15 minutos",
    "scheduling_method": "Hora marcada"
   },
-  "ultrassom__biopsias__biopsia_de_tireoide_sempre_entrar_em_contato_antes__padrao": {
-   "base_title": "Biópsia de tireoide (sempre entrar em contato antes)",
-   "spec": "Padrão",
-   "price": "R$ 1.100,00",
-   "convenios": [],
-   "payment_methods": "Pix, cartão de crédito, cartão de débito e dinheiro.",
-   "installments": "Parcelamento em até 6 vezes sem juros",
-   "preparation": "Entrar em contato com a clínica antes da realização do exame.",
-   "contraindications": "Não possui contra indicações",
-   "documents": "Documento de identificação e pedido médico;",
-   "delivery_time": "15 minutos para laudo e imagens.",
-   "age_range": "Adultos e crianças",
-   "duration": "15 minutos",
-   "scheduling_method": "Hora marcada"
-  },
-  "ultrassom__biopsias__biopsia_de_mama_sempre_entrar_em_contato_antes__padrao": {
-   "base_title": "Biópsia de mama (sempre entrar em contato antes)",
-   "spec": "Padrão",
-   "price": "R$ 1.500,00",
-   "convenios": [],
-   "payment_methods": "Pix, cartão de crédito, cartão de débito e dinheiro.",
-   "installments": "Parcelamento em até 6 vezes sem juros",
-   "preparation": "Entrar em contato com a clínica antes da realização do exame.",
-   "contraindications": "Não possui contra indicações",
-   "documents": "Documento de identificação e pedido médico;",
-   "delivery_time": "15 minutos para laudo e imagens.",
-   "age_range": "Adultos e crianças",
-   "duration": "15 minutos",
-   "scheduling_method": "Hora marcada"
-  },
-  "ultrassom__biopsias__biopsia_de_prostata__com_sedacao": {
-   "base_title": "Biópsia de próstata",
-   "spec": "Com sedação",
-   "price": "R$ 3.000,00",
-   "convenios": [],
-   "payment_methods": "Pix, cartão de crédito, cartão de débito e dinheiro.",
-   "installments": "Parcelamento em até 6 vezes sem juros",
-   "preparation": "Entrar em contato com a clínica antes da realização do exame.",
-   "contraindications": "Não possui contra indicações",
-   "documents": "Documento de identificação e pedido médico;",
-   "delivery_time": "15 minutos para laudo e imagens.",
-   "age_range": "Adultos e crianças",
-   "duration": "15 minutos",
-   "scheduling_method": "Hora marcada"
-  },
-  "ultrassom__biopsias__biopsia_de_prostata__sem_sedacao": {
-   "base_title": "Biópsia de próstata",
-   "spec": "Sem sedação",
-   "price": "R$ 2.500,00",
-   "convenios": [],
-   "payment_methods": "Pix, cartão de crédito, cartão de débito e dinheiro.",
-   "installments": "Parcelamento em até 6 vezes sem juros",
-   "preparation": "Entrar em contato com a clínica antes da realização do exame.",
-   "contraindications": "Não possui contra indicações",
-   "documents": "Documento de identificação e pedido médico;",
-   "delivery_time": "15 minutos para laudo e imagens.",
-   "age_range": "Adultos e crianças",
-   "duration": "15 minutos",
-   "scheduling_method": "Hora marcada"
-  },
   "raio-x__torax_abdome__abdome_agudo__padrao": {
    "base_title": "Abdome agudo",
    "spec": "Padrão",
@@ -11502,6 +11445,66 @@
    "age_range": "Adultos e crianças",
    "duration": "20 minutos",
    "scheduling_method": "Ordem de chegada"
+  },
+  "biopsias_____biopsia_de_tireoide_sempre_entrar_em_contato_antes__padrao": {
+   "base_title": "Biópsia de tireoide (sempre entrar em contato antes)",
+   "spec": "Padrão",
+   "price": "R$ 1.100,00",
+   "convenios": [],
+   "payment_methods": "Pix, cartão de crédito, cartão de débito e dinheiro.",
+   "installments": "Parcelamento em até 6 vezes sem juros",
+   "preparation": "Entrar em contato com a clínica antes da realização do exame.",
+   "contraindications": "Não possui contra indicações",
+   "documents": "Documento de identificação e pedido médico;",
+   "delivery_time": "15 minutos para laudo e imagens.",
+   "age_range": "Adultos e crianças",
+   "duration": "15 minutos",
+   "scheduling_method": "Hora marcada"
+  },
+  "biopsias_____biopsia_de_mama_sempre_entrar_em_contato_antes__padrao": {
+   "base_title": "Biópsia de mama (sempre entrar em contato antes)",
+   "spec": "Padrão",
+   "price": "R$ 1.500,00",
+   "convenios": [],
+   "payment_methods": "Pix, cartão de crédito, cartão de débito e dinheiro.",
+   "installments": "Parcelamento em até 6 vezes sem juros",
+   "preparation": "Entrar em contato com a clínica antes da realização do exame.",
+   "contraindications": "Não possui contra indicações",
+   "documents": "Documento de identificação e pedido médico;",
+   "delivery_time": "15 minutos para laudo e imagens.",
+   "age_range": "Adultos e crianças",
+   "duration": "15 minutos",
+   "scheduling_method": "Hora marcada"
+  },
+  "biopsias_____biopsia_de_prostata__com_sedacao": {
+   "base_title": "Biópsia de próstata",
+   "spec": "Com sedação",
+   "price": "R$ 3.000,00",
+   "convenios": [],
+   "payment_methods": "Pix, cartão de crédito, cartão de débito e dinheiro.",
+   "installments": "Parcelamento em até 6 vezes sem juros",
+   "preparation": "Entrar em contato com a clínica antes da realização do exame.",
+   "contraindications": "Não possui contra indicações",
+   "documents": "Documento de identificação e pedido médico;",
+   "delivery_time": "15 minutos para laudo e imagens.",
+   "age_range": "Adultos e crianças",
+   "duration": "15 minutos",
+   "scheduling_method": "Hora marcada"
+  },
+  "biopsias_____biopsia_de_prostata__sem_sedacao": {
+   "base_title": "Biópsia de próstata",
+   "spec": "Sem sedação",
+   "price": "R$ 2.500,00",
+   "convenios": [],
+   "payment_methods": "Pix, cartão de crédito, cartão de débito e dinheiro.",
+   "installments": "Parcelamento em até 6 vezes sem juros",
+   "preparation": "Entrar em contato com a clínica antes da realização do exame.",
+   "contraindications": "Não possui contra indicações",
+   "documents": "Documento de identificação e pedido médico;",
+   "delivery_time": "15 minutos para laudo e imagens.",
+   "age_range": "Adultos e crianças",
+   "duration": "15 minutos",
+   "scheduling_method": "Hora marcada"
   }
  }
 }
