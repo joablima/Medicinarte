@@ -170,10 +170,6 @@ function getNextScreen(body){
       const name=base.title+(v.spec&&v.spec!=="Padrão"?` – ${v.spec}`:"");
       return infoResult(it,name,fieldValue(v,it));
     }
-    case "INFO_RESULT":{
-      if(data.info_decision==="outra") return {screen:"INFO_TYPE",data:{}};
-      return {screen:"END",data:{}};
-    }
     default:
       return {screen:"WELCOME",data:{}};
   }

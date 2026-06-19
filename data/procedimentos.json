@@ -2858,7 +2858,7 @@
   "mamografia_____mamografia_bilateral_digital__padrao": {
    "base_title": "Mamografia bilateral digital",
    "spec": "Padrão",
-   "price": "R$ 280",
+   "price": "R$ 280,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -2887,7 +2887,7 @@
    "installments": "Pagamento à vista (não parcelável)",
    "preparation": "• No dia do exame, não utilizar desodorante, talco, cremes, perfumes ou pomadas nas axilas e mamas, pois podem interferir nas imagens.\n• Preferir roupas de duas peças para maior conforto durante o exame.\n• Trazer exames anteriores das mamas, se possuir.\n• Informar à equipe caso esteja grávida ou com suspeita de gravidez",
    "contraindications": "• Informar à equipe caso esteja grávida ou com suspeita de gravidez.",
-   "documents": "•Documento de identificação e pedido médico;.\n• Caso tenha realizado mamografia anteriormente, o exame anterior deve ser trazido na data do novo exame;",
+   "documents": "• Documento de identificação e pedido médico.\n• Caso tenha realizado mamografia anteriormente, o exame anterior deve ser trazido na data do novo exame;",
    "delivery_time": "Imagens no mesmo dia e laudo em 3 dias úteis.",
    "age_range": "Adultos atendidos normalmente; crianças apenas sob orientação médica.",
    "duration": "20 minutos",
@@ -2896,7 +2896,7 @@
   "mamografia_____compressao_seletiva_de_mama__padrao": {
    "base_title": "Compressão seletiva de mama",
    "spec": "Padrão",
-   "price": "R$ 560",
+   "price": "R$ 560,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -2925,7 +2925,7 @@
    "installments": "Parcelamento em 2 vezes sem juros",
    "preparation": "• No dia do exame, não utilizar desodorante, talco, cremes, perfumes ou pomadas nas axilas e mamas, pois podem interferir nas imagens.\n• Preferir roupas de duas peças para maior conforto durante o exame.\n• Trazer exames anteriores das mamas, se possuir.\n• Informar à equipe caso esteja grávida ou com suspeita de gravidez",
    "contraindications": "Informar à equipe caso esteja grávida ou com suspeita de gravidez.",
-   "documents": "•Documento de identificação e pedido médico;.\n• Caso tenha realizado mamografia anteriormente, o exame anterior deve ser trazido na data do novo exame;",
+   "documents": "• Documento de identificação e pedido médico.\n• Caso tenha realizado mamografia anteriormente, o exame anterior deve ser trazido na data do novo exame;",
    "delivery_time": "Imagens no mesmo dia e laudo em 3 dias úteis.",
    "age_range": "Adultos atendidos normalmente; crianças apenas sob orientação médica.",
    "duration": "20 minutos",
@@ -2934,7 +2934,7 @@
   "ressonancia__outras__rnm_mama__sem_contraste": {
    "base_title": "RNM Mama",
    "spec": "Sem Contraste",
-   "price": "R$ 2200",
+   "price": "R$ 2.200,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -2972,7 +2972,7 @@
   "ressonancia__outras__rnm_mama__com_contraste": {
    "base_title": "RNM Mama",
    "spec": "Com Contraste",
-   "price": "R$ 2550",
+   "price": "R$ 2.550,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3010,7 +3010,7 @@
   "ressonancia__abdome_pelve__rnm_abdome_total__sem_contraste": {
    "base_title": "RNM Abdome total",
    "spec": "Sem Contraste",
-   "price": "R$ 1600",
+   "price": "R$ 1.600,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3048,7 +3048,7 @@
   "ressonancia__abdome_pelve__rnm_abdome_total__com_contraste": {
    "base_title": "RNM Abdome total",
    "spec": "Com Contraste",
-   "price": "R$ 1800",
+   "price": "R$ 1.800,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3086,7 +3086,7 @@
   "ressonancia__outras__rnm_angiorressonancia_arterial__sem_contraste": {
    "base_title": "RNM Angiorressonância arterial",
    "spec": "Sem Contraste",
-   "price": "R$ 1210",
+   "price": "R$ 1.210,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3124,7 +3124,7 @@
   "ressonancia__outras__rnm_cardiaca__sem_contraste": {
    "base_title": "RNM Cardíaca",
    "spec": "Sem Contraste",
-   "price": "R$ 2500",
+   "price": "R$ 2.500,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3162,7 +3162,7 @@
   "ressonancia__outras__rnm_cardiaca__com_contraste": {
    "base_title": "RNM Cardíaca",
    "spec": "Com Contraste",
-   "price": "R$ 2900",
+   "price": "R$ 2.900,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3200,7 +3200,7 @@
   "ressonancia__abdome_pelve__rnm_colangiorressonancia_hidro_rm__sem_contraste": {
    "base_title": "RNM Colangiorressonância (Hidro-RM)",
    "spec": "Sem Contraste",
-   "price": "R$ 1600",
+   "price": "R$ 1.600,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3238,7 +3238,7 @@
   "ressonancia__abdome_pelve__rnm_colangiorressonancia_hidro_rm__com_contraste": {
    "base_title": "RNM Colangiorressonância (Hidro-RM)",
    "spec": "Com Contraste",
-   "price": "R$ 1800",
+   "price": "R$ 1.800,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3276,7 +3276,7 @@
   "ressonancia__abdome_pelve__rnm_defecorressonancia__sem_contraste": {
    "base_title": "RNM Defecorressonância",
    "spec": "Sem Contraste",
-   "price": "R$ 2550",
+   "price": "R$ 2.550,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3314,7 +3314,7 @@
   "ressonancia__abdome_pelve__rnm_defecorressonancia__com_contraste": {
    "base_title": "RNM Defecorressonância",
    "spec": "Com Contraste",
-   "price": "R$ 2750",
+   "price": "R$ 2.750,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3352,7 +3352,7 @@
   "ressonancia__membros__rnm_joelho__sem_contraste": {
    "base_title": "RNM Joelho",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3390,7 +3390,7 @@
   "ressonancia__membros__rnm_joelho__com_contraste": {
    "base_title": "RNM Joelho",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3428,7 +3428,7 @@
   "ressonancia__membros__rnm_ombro__sem_contraste": {
    "base_title": "RNM Ombro",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3466,7 +3466,7 @@
   "ressonancia__membros__rnm_ombro__com_contraste": {
    "base_title": "RNM Ombro",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3504,7 +3504,7 @@
   "ressonancia__membros__rnm_cotovelo__sem_contraste": {
    "base_title": "RNM Cotovelo",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3542,7 +3542,7 @@
   "ressonancia__membros__rnm_cotovelo__com_contraste": {
    "base_title": "RNM Cotovelo",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3580,7 +3580,7 @@
   "ressonancia__membros__rnm_pe__sem_contraste": {
    "base_title": "RNM Pé",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3618,7 +3618,7 @@
   "ressonancia__membros__rnm_pe__com_contraste": {
    "base_title": "RNM Pé",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3656,7 +3656,7 @@
   "ressonancia__membros__rnm_bacia__sem_contraste": {
    "base_title": "RNM Bacia",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3694,7 +3694,7 @@
   "ressonancia__membros__rnm_bacia__com_contraste": {
    "base_title": "RNM Bacia",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3732,7 +3732,7 @@
   "ressonancia__outras__rnm_torax__sem_contraste": {
    "base_title": "RNM Tórax",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3770,7 +3770,7 @@
   "ressonancia__outras__rnm_torax__com_contraste": {
    "base_title": "RNM Tórax",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3808,7 +3808,7 @@
   "ressonancia__abdome_pelve__rnm_enterorressonancia__sem_contraste": {
    "base_title": "RNM Enterorressonância",
    "spec": "Sem Contraste",
-   "price": "R$ 2550",
+   "price": "R$ 2.550,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3846,7 +3846,7 @@
   "ressonancia__abdome_pelve__rnm_enterorressonancia__com_contraste": {
    "base_title": "RNM Enterorressonância",
    "spec": "Com Contraste",
-   "price": "R$ 2750",
+   "price": "R$ 2.750,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3884,7 +3884,7 @@
   "ressonancia__abdome_pelve__rnm_urorressonancia_vias_urinarias__sem_contraste": {
    "base_title": "RNM Urorressonância / Vias urinárias",
    "spec": "Sem Contraste",
-   "price": "R$ 1600",
+   "price": "R$ 1.600,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3922,7 +3922,7 @@
   "ressonancia__abdome_pelve__rnm_urorressonancia_vias_urinarias__com_contraste": {
    "base_title": "RNM Urorressonância / Vias urinárias",
    "spec": "Com Contraste",
-   "price": "R$ 1800",
+   "price": "R$ 1.800,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3960,7 +3960,7 @@
   "ressonancia__outras__espectroscopia__sem_contraste": {
    "base_title": "Espectroscopia",
    "spec": "Sem Contraste",
-   "price": "R$ 250",
+   "price": "R$ 250,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -3998,7 +3998,7 @@
   "ressonancia__outras__espectroscopia__com_contraste": {
    "base_title": "Espectroscopia",
    "spec": "Com Contraste",
-   "price": "R$ 250",
+   "price": "R$ 250,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4036,7 +4036,7 @@
   "ressonancia__outras__reconstrucao__sem_contraste": {
    "base_title": "Reconstrução",
    "spec": "Sem Contraste",
-   "price": "R$ 150",
+   "price": "R$ 150,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4074,7 +4074,7 @@
   "ressonancia__outras__reconstrucao__com_contraste": {
    "base_title": "Reconstrução",
    "spec": "Com Contraste",
-   "price": "R$ 150",
+   "price": "R$ 150,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4112,7 +4112,7 @@
   "ressonancia__cabeca_pescoco__rnm_cranio_encefalo__sem_contraste": {
    "base_title": "RNM Crânio / Encéfalo",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4150,7 +4150,7 @@
   "ressonancia__cabeca_pescoco__rnm_cranio_encefalo__com_contraste": {
    "base_title": "RNM Crânio / Encéfalo",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4188,7 +4188,7 @@
   "ressonancia__cabeca_pescoco__rnm_hipofise_sela_turcica__sem_contraste": {
    "base_title": "RNM Hipófise (sela túrcica)",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4226,7 +4226,7 @@
   "ressonancia__cabeca_pescoco__rnm_hipofise_sela_turcica__com_contraste": {
    "base_title": "RNM Hipófise (sela túrcica)",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4264,7 +4264,7 @@
   "ressonancia__cabeca_pescoco__rnm_orbitas_olhos__sem_contraste": {
    "base_title": "RNM Órbitas (olhos)",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4302,7 +4302,7 @@
   "ressonancia__cabeca_pescoco__rnm_orbitas_olhos__com_contraste": {
    "base_title": "RNM Órbitas (olhos)",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4340,7 +4340,7 @@
   "ressonancia__cabeca_pescoco__rnm_face_seios_da_face__sem_contraste": {
    "base_title": "RNM Face / Seios da face",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4378,7 +4378,7 @@
   "ressonancia__cabeca_pescoco__rnm_face_seios_da_face__com_contraste": {
    "base_title": "RNM Face / Seios da face",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4416,7 +4416,7 @@
   "ressonancia__cabeca_pescoco__rnm_atm_articulacao_temporomandibular__sem_contraste": {
    "base_title": "RNM ATM (articulação temporomandibular)",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4454,7 +4454,7 @@
   "ressonancia__cabeca_pescoco__rnm_atm_articulacao_temporomandibular__com_contraste": {
    "base_title": "RNM ATM (articulação temporomandibular)",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4492,7 +4492,7 @@
   "ressonancia__cabeca_pescoco__rnm_ouvidos_condutos_auditivos_internos__sem_contraste": {
    "base_title": "RNM Ouvidos / Condutos auditivos internos",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4530,7 +4530,7 @@
   "ressonancia__cabeca_pescoco__rnm_ouvidos_condutos_auditivos_internos__com_contraste": {
    "base_title": "RNM Ouvidos / Condutos auditivos internos",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4568,7 +4568,7 @@
   "ressonancia__cabeca_pescoco__rnm_pescoco_partes_moles_cervicais__sem_contraste": {
    "base_title": "RNM Pescoço / Partes moles cervicais",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4606,7 +4606,7 @@
   "ressonancia__cabeca_pescoco__rnm_pescoco_partes_moles_cervicais__com_contraste": {
    "base_title": "RNM Pescoço / Partes moles cervicais",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4644,7 +4644,7 @@
   "ressonancia__cabeca_pescoco__rnm_glandulas_salivares__sem_contraste": {
    "base_title": "RNM Glândulas salivares",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4682,7 +4682,7 @@
   "ressonancia__cabeca_pescoco__rnm_glandulas_salivares__com_contraste": {
    "base_title": "RNM Glândulas salivares",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4720,7 +4720,7 @@
   "ressonancia__cabeca_pescoco__rnm_laringe_faringe__sem_contraste": {
    "base_title": "RNM Laringe / Faringe",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4758,7 +4758,7 @@
   "ressonancia__cabeca_pescoco__rnm_laringe_faringe__com_contraste": {
    "base_title": "RNM Laringe / Faringe",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4796,7 +4796,7 @@
   "ressonancia__coluna__rnm_coluna_cervical__sem_contraste": {
    "base_title": "RNM Coluna cervical",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4834,7 +4834,7 @@
   "ressonancia__coluna__rnm_coluna_cervical__com_contraste": {
    "base_title": "RNM Coluna cervical",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4872,7 +4872,7 @@
   "ressonancia__coluna__rnm_coluna_toracica_dorsal__sem_contraste": {
    "base_title": "RNM Coluna torácica (dorsal)",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4910,7 +4910,7 @@
   "ressonancia__coluna__rnm_coluna_toracica_dorsal__com_contraste": {
    "base_title": "RNM Coluna torácica (dorsal)",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4948,7 +4948,7 @@
   "ressonancia__coluna__rnm_coluna_lombar__sem_contraste": {
    "base_title": "RNM Coluna lombar",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -4986,7 +4986,7 @@
   "ressonancia__coluna__rnm_coluna_lombar__com_contraste": {
    "base_title": "RNM Coluna lombar",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5024,7 +5024,7 @@
   "ressonancia__coluna__rnm_coluna_lombossacra__sem_contraste": {
    "base_title": "RNM Coluna lombossacra",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5062,7 +5062,7 @@
   "ressonancia__coluna__rnm_coluna_lombossacra__com_contraste": {
    "base_title": "RNM Coluna lombossacra",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5100,7 +5100,7 @@
   "ressonancia__coluna__rnm_sacro_e_coccix__sem_contraste": {
    "base_title": "RNM Sacro e cóccix",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5138,7 +5138,7 @@
   "ressonancia__coluna__rnm_sacro_e_coccix__com_contraste": {
    "base_title": "RNM Sacro e cóccix",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5176,7 +5176,7 @@
   "ressonancia__coluna__rnm_coluna_total__sem_contraste": {
    "base_title": "RNM Coluna total",
    "spec": "Sem Contraste",
-   "price": "R$ 3300",
+   "price": "R$ 3.300,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5214,7 +5214,7 @@
   "ressonancia__coluna__rnm_coluna_total__com_contraste": {
    "base_title": "RNM Coluna total",
    "spec": "Com Contraste",
-   "price": "R$ 4350",
+   "price": "R$ 4.350,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5252,7 +5252,7 @@
   "ressonancia__outras__rnm_parede_toracica__sem_contraste": {
    "base_title": "RNM Parede torácica",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5290,7 +5290,7 @@
   "ressonancia__outras__rnm_parede_toracica__com_contraste": {
    "base_title": "RNM Parede torácica",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5328,7 +5328,7 @@
   "ressonancia__membros__rnm_quadril_coxofemoral__sem_contraste": {
    "base_title": "RNM Quadril / Coxofemoral",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5366,7 +5366,7 @@
   "ressonancia__membros__rnm_quadril_coxofemoral__com_contraste": {
    "base_title": "RNM Quadril / Coxofemoral",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5404,7 +5404,7 @@
   "ressonancia__membros__rnm_coxa_femur__sem_contraste": {
    "base_title": "RNM Coxa / Fêmur",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5442,7 +5442,7 @@
   "ressonancia__membros__rnm_coxa_femur__com_contraste": {
    "base_title": "RNM Coxa / Fêmur",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5480,7 +5480,7 @@
   "ressonancia__membros__rnm_perna_tibia_e_fibula__sem_contraste": {
    "base_title": "RNM Perna / Tíbia e fíbula",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5518,7 +5518,7 @@
   "ressonancia__membros__rnm_perna_tibia_e_fibula__com_contraste": {
    "base_title": "RNM Perna / Tíbia e fíbula",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5556,7 +5556,7 @@
   "ressonancia__membros__rnm_tornozelo__sem_contraste": {
    "base_title": "RNM Tornozelo",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5594,7 +5594,7 @@
   "ressonancia__membros__rnm_tornozelo__com_contraste": {
    "base_title": "RNM Tornozelo",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5632,7 +5632,7 @@
   "ressonancia__membros__rnm_calcaneo__sem_contraste": {
    "base_title": "RNM Calcâneo",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5670,7 +5670,7 @@
   "ressonancia__membros__rnm_calcaneo__com_contraste": {
    "base_title": "RNM Calcâneo",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5708,7 +5708,7 @@
   "ressonancia__membros__rnm_pelve__sem_contraste": {
    "base_title": "RNM Pelve",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5746,7 +5746,7 @@
   "ressonancia__membros__rnm_pelve__com_contraste": {
    "base_title": "RNM Pelve",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5784,7 +5784,7 @@
   "ressonancia__abdome_pelve__rnm_prostata__sem_contraste": {
    "base_title": "RNM Próstata",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5822,7 +5822,7 @@
   "ressonancia__abdome_pelve__rnm_prostata__com_contraste": {
    "base_title": "RNM Próstata",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5860,7 +5860,7 @@
   "ressonancia__membros__rnm_braco_umero__sem_contraste": {
    "base_title": "RNM Braço / Úmero",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5898,7 +5898,7 @@
   "ressonancia__membros__rnm_braco_umero__com_contraste": {
    "base_title": "RNM Braço / Úmero",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5936,7 +5936,7 @@
   "ressonancia__membros__rnm_antebraco__sem_contraste": {
    "base_title": "RNM Antebraço",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -5974,7 +5974,7 @@
   "ressonancia__membros__rnm_antebraco__com_contraste": {
    "base_title": "RNM Antebraço",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6012,7 +6012,7 @@
   "ressonancia__membros__rnm_punho__sem_contraste": {
    "base_title": "RNM Punho",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6050,7 +6050,7 @@
   "ressonancia__membros__rnm_punho__com_contraste": {
    "base_title": "RNM Punho",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6088,7 +6088,7 @@
   "ressonancia__membros__rnm_mao__sem_contraste": {
    "base_title": "RNM Mão",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6126,7 +6126,7 @@
   "ressonancia__membros__rnm_mao__com_contraste": {
    "base_title": "RNM Mão",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6164,7 +6164,7 @@
   "ressonancia__membros__rnm_plexo_braquial__sem_contraste": {
    "base_title": "RNM Plexo braquial",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6202,7 +6202,7 @@
   "ressonancia__membros__rnm_plexo_braquial__com_contraste": {
    "base_title": "RNM Plexo braquial",
    "spec": "Com Contraste",
-   "price": "R$ 1450",
+   "price": "R$ 1.450,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6240,7 +6240,7 @@
   "ressonancia__outras__rnm_angiorressonancia_venosa__com_contraste": {
    "base_title": "RNM Angiorressonância venosa",
    "spec": "Com Contraste",
-   "price": "R$ 1560",
+   "price": "R$ 1.560,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6278,7 +6278,7 @@
   "tomografia__torax_abdome__angiotomografia_de_abdome_total__com_contraste": {
    "base_title": "Angiotomografia de abdome total",
    "spec": "Com Contraste",
-   "price": "R$ 1250",
+   "price": "R$ 1.250,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6316,7 +6316,7 @@
   "tomografia__torax_abdome__angiotomografia_arterial_de_abdome__com_contraste": {
    "base_title": "Angiotomografia arterial de abdome",
    "spec": "Com Contraste",
-   "price": "R$ 1250",
+   "price": "R$ 1.250,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6354,7 +6354,7 @@
   "tomografia__cabeca_pescoco__angiotomografia_arterial_de_cranio__com_contraste": {
    "base_title": "Angiotomografia arterial de crânio",
    "spec": "Com Contraste",
-   "price": "R$ 1250",
+   "price": "R$ 1.250,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6392,7 +6392,7 @@
   "tomografia__cabeca_pescoco__angiotomografia_arterial_de_pescoco__com_contraste": {
    "base_title": "Angiotomografia arterial de pescoço",
    "spec": "Com Contraste",
-   "price": "R$ 1250",
+   "price": "R$ 1.250,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6430,7 +6430,7 @@
   "tomografia__torax_abdome__angiotomografia_arterial_de_torax__com_contraste": {
    "base_title": "Angiotomografia arterial de tórax",
    "spec": "Com Contraste",
-   "price": "R$ 1250",
+   "price": "R$ 1.250,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6468,7 +6468,7 @@
   "tomografia__cabeca_pescoco__angiotomografia_venosa_de_cranio__com_contraste": {
    "base_title": "Angiotomografia venosa de crânio",
    "spec": "Com Contraste",
-   "price": "R$ 1250",
+   "price": "R$ 1.250,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6506,7 +6506,7 @@
   "tomografia__cabeca_pescoco__angiotomografia_venosa_de_pescoco__com_contraste": {
    "base_title": "Angiotomografia venosa de pescoço",
    "spec": "Com Contraste",
-   "price": "R$ 1250",
+   "price": "R$ 1.250,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6544,7 +6544,7 @@
   "tomografia__articulacoes__articulacoes__sem_contraste": {
    "base_title": "Articulações",
    "spec": "Sem Contraste",
-   "price": "R$ 500",
+   "price": "R$ 500,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6582,7 +6582,7 @@
   "tomografia__articulacoes__articulacoes__com_contraste": {
    "base_title": "Articulações",
    "spec": "Com Contraste",
-   "price": "R$ 850",
+   "price": "R$ 850,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6620,7 +6620,7 @@
   "tomografia__cabeca_pescoco__articulacoes_temporomandibulares__sem_contraste": {
    "base_title": "Articulações temporomandibulares",
    "spec": "Sem Contraste",
-   "price": "R$ 500",
+   "price": "R$ 500,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6658,7 +6658,7 @@
   "tomografia__cabeca_pescoco__articulacoes_temporomandibulares__com_contraste": {
    "base_title": "Articulações temporomandibulares",
    "spec": "Com Contraste",
-   "price": "R$ 850",
+   "price": "R$ 850,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6696,7 +6696,7 @@
   "tomografia__torax_abdome__abdome_total_aparelho_urinario_uro_tc__sem_contraste": {
    "base_title": "Abdome total / Aparelho urinário / Uro-TC",
    "spec": "Sem Contraste",
-   "price": "R$ 750",
+   "price": "R$ 750,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6734,7 +6734,7 @@
   "tomografia__torax_abdome__abdome_total_aparelho_urinario_uro_tc__com_contraste": {
    "base_title": "Abdome total / Aparelho urinário / Uro-TC",
    "spec": "Com Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6772,7 +6772,7 @@
   "tomografia__torax_abdome__abdome_superior__sem_contraste": {
    "base_title": "Abdome superior",
    "spec": "Sem Contraste",
-   "price": "R$ 500",
+   "price": "R$ 500,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6810,7 +6810,7 @@
   "tomografia__torax_abdome__abdome_superior__com_contraste": {
    "base_title": "Abdome superior",
    "spec": "Com Contraste",
-   "price": "R$ 850",
+   "price": "R$ 850,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6848,7 +6848,7 @@
   "tomografia__cabeca_pescoco__cranio_sela_turcica_ou_orbitas__sem_contraste": {
    "base_title": "Crânio, sela túrcica ou órbitas",
    "spec": "Sem Contraste",
-   "price": "R$ 500",
+   "price": "R$ 500,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6886,7 +6886,7 @@
   "tomografia__cabeca_pescoco__cranio_sela_turcica_ou_orbitas__com_contraste": {
    "base_title": "Crânio, sela túrcica ou órbitas",
    "spec": "Com Contraste",
-   "price": "R$ 850",
+   "price": "R$ 850,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6924,7 +6924,7 @@
   "tomografia__coluna__coluna_cervical_dorsal_ou_lombar__sem_contraste": {
    "base_title": "Coluna cervical, dorsal ou lombar",
    "spec": "Sem Contraste",
-   "price": "R$ 500",
+   "price": "R$ 500,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -6962,7 +6962,7 @@
   "tomografia__coluna__coluna_cervical_dorsal_ou_lombar__com_contraste": {
    "base_title": "Coluna cervical, dorsal ou lombar",
    "spec": "Com Contraste",
-   "price": "R$ 850",
+   "price": "R$ 850,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7000,7 +7000,7 @@
   "tomografia__torax_abdome__enterotomografia__sem_contraste": {
    "base_title": "Enterotomografia",
    "spec": "Sem Contraste",
-   "price": "R$ 500",
+   "price": "R$ 500,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7038,7 +7038,7 @@
   "tomografia__torax_abdome__enterotomografia__com_contraste": {
    "base_title": "Enterotomografia",
    "spec": "Com Contraste",
-   "price": "R$ 1110",
+   "price": "R$ 1.110,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7076,7 +7076,7 @@
   "tomografia__cabeca_pescoco__face_ou_seios_da_face__sem_contraste": {
    "base_title": "Face ou seios da face",
    "spec": "Sem Contraste",
-   "price": "R$ 500",
+   "price": "R$ 500,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7114,7 +7114,7 @@
   "tomografia__cabeca_pescoco__face_ou_seios_da_face__com_contraste": {
    "base_title": "Face ou seios da face",
    "spec": "Com Contraste",
-   "price": "R$ 850",
+   "price": "R$ 850,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7152,7 +7152,7 @@
   "tomografia__cabeca_pescoco__mastoides_ou_orelhas__sem_contraste": {
    "base_title": "Mastoides ou orelhas",
    "spec": "Sem Contraste",
-   "price": "R$ 500",
+   "price": "R$ 500,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7190,7 +7190,7 @@
   "tomografia__cabeca_pescoco__mastoides_ou_orelhas__com_contraste": {
    "base_title": "Mastoides ou orelhas",
    "spec": "Com Contraste",
-   "price": "R$ 850",
+   "price": "R$ 850,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7228,7 +7228,7 @@
   "tomografia__torax_abdome__pelve__sem_contraste": {
    "base_title": "Pelve",
    "spec": "Sem Contraste",
-   "price": "R$ 500",
+   "price": "R$ 500,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7266,7 +7266,7 @@
   "tomografia__torax_abdome__pelve__com_contraste": {
    "base_title": "Pelve",
    "spec": "Com Contraste",
-   "price": "R$ 850",
+   "price": "R$ 850,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7304,7 +7304,7 @@
   "tomografia__torax_abdome__abdome_inferior__sem_contraste": {
    "base_title": "Abdome inferior",
    "spec": "Sem Contraste",
-   "price": "R$ 500",
+   "price": "R$ 500,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7342,7 +7342,7 @@
   "tomografia__torax_abdome__abdome_inferior__com_contraste": {
    "base_title": "Abdome inferior",
    "spec": "Com Contraste",
-   "price": "R$ 850",
+   "price": "R$ 850,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7380,7 +7380,7 @@
   "tomografia__torax_abdome__bacia__sem_contraste": {
    "base_title": "Bacia",
    "spec": "Sem Contraste",
-   "price": "R$ 500",
+   "price": "R$ 500,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7418,7 +7418,7 @@
   "tomografia__torax_abdome__bacia__com_contraste": {
    "base_title": "Bacia",
    "spec": "Com Contraste",
-   "price": "R$ 850",
+   "price": "R$ 850,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7456,7 +7456,7 @@
   "tomografia__cabeca_pescoco__pescoco__sem_contraste": {
    "base_title": "Pescoço",
    "spec": "Sem Contraste",
-   "price": "R$ 500",
+   "price": "R$ 500,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7494,7 +7494,7 @@
   "tomografia__cabeca_pescoco__pescoco__com_contraste": {
    "base_title": "Pescoço",
    "spec": "Com Contraste",
-   "price": "R$ 850",
+   "price": "R$ 850,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7532,7 +7532,7 @@
   "tomografia__articulacoes__segmento_apendicular__sem_contraste": {
    "base_title": "Segmento apendicular",
    "spec": "Sem Contraste",
-   "price": "R$ 500",
+   "price": "R$ 500,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7570,7 +7570,7 @@
   "tomografia__articulacoes__segmento_apendicular__com_contraste": {
    "base_title": "Segmento apendicular",
    "spec": "Com Contraste",
-   "price": "R$ 850",
+   "price": "R$ 850,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7608,7 +7608,7 @@
   "tomografia__torax_abdome__torax__sem_contraste": {
    "base_title": "Tórax",
    "spec": "Sem Contraste",
-   "price": "R$ 500",
+   "price": "R$ 500,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7646,7 +7646,7 @@
   "tomografia__torax_abdome__torax__com_contraste": {
    "base_title": "Tórax",
    "spec": "Com Contraste",
-   "price": "R$ 850",
+   "price": "R$ 850,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7684,7 +7684,7 @@
   "tomografia__torax_abdome__enterotomografia_tc__sem_contraste": {
    "base_title": "Enterotomografia (TC)",
    "spec": "Sem Contraste",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7722,7 +7722,7 @@
   "tomografia__torax_abdome__enterotomografia_tc__com_contraste": {
    "base_title": "Enterotomografia (TC)",
    "spec": "Com Contraste",
-   "price": "R$ 1110",
+   "price": "R$ 1.110,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7760,7 +7760,7 @@
   "ultrassom__pelve_obst__abdome_inferior_feminino_pelve_feminina__padrao": {
    "base_title": "Abdome inferior feminino (pelve feminina)",
    "spec": "Padrão",
-   "price": "R$ 180",
+   "price": "R$ 180,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7798,7 +7798,7 @@
   "ultrassom__pelve_obst__abdome_inferior_masculino_inclui_prostata__padrao": {
    "base_title": "Abdome inferior masculino (inclui próstata)",
    "spec": "Padrão",
-   "price": "R$ 180",
+   "price": "R$ 180,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7836,7 +7836,7 @@
   "ultrassom__abdome__abdome_superior__padrao": {
    "base_title": "Abdome superior",
    "spec": "Sem Doppler",
-   "price": "R$ 180",
+   "price": "R$ 180,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7874,7 +7874,7 @@
   "ultrassom__abdome__abdome_superior__com_doppler": {
    "base_title": "Abdome superior",
    "spec": "Com Doppler",
-   "price": "R$ 350",
+   "price": "R$ 350,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7912,7 +7912,7 @@
   "ultrassom__abdome__abdome_total__padrao": {
    "base_title": "Abdome total",
    "spec": "Sem Doppler",
-   "price": "R$ 190",
+   "price": "R$ 190,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7950,7 +7950,7 @@
   "ultrassom__abdome__abdome_total__com_doppler": {
    "base_title": "Abdome total",
    "spec": "Com Doppler",
-   "price": "R$ 500",
+   "price": "R$ 500,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -7988,7 +7988,7 @@
   "ultrassom__abdome__aparelho_urinario__padrao": {
    "base_title": "Aparelho urinário",
    "spec": "Padrão",
-   "price": "R$ 180",
+   "price": "R$ 180,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8026,7 +8026,7 @@
   "ultrassom__mama_partes__bolsa_escrotal__padrao": {
    "base_title": "Bolsa escrotal",
    "spec": "Sem Doppler",
-   "price": "R$ 180",
+   "price": "R$ 180,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8064,7 +8064,7 @@
   "ultrassom__mama_partes__bolsa_escrotal__com_doppler": {
    "base_title": "Bolsa escrotal",
    "spec": "Com Doppler",
-   "price": "R$ 350",
+   "price": "R$ 350,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8102,7 +8102,7 @@
   "ultrassom__mama_partes__cervical__padrao": {
    "base_title": "Cervical",
    "spec": "Padrão",
-   "price": "R$ 180",
+   "price": "R$ 180,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8140,7 +8140,7 @@
   "ultrassom__doppler__doppler_arterial_de_membro_unilateral__padrao": {
    "base_title": "Doppler arterial de membro unilateral",
    "spec": "Padrão",
-   "price": "R$ 275",
+   "price": "R$ 275,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8178,7 +8178,7 @@
   "ultrassom__doppler__doppler_arterial_de_membros_inferiores_ou_superior__padrao": {
    "base_title": "Doppler arterial de membros inferiores ou superiores",
    "spec": "Padrão",
-   "price": "R$ 550",
+   "price": "R$ 550,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8216,7 +8216,7 @@
   "ultrassom__doppler__doppler_colorido_de_vasos_cervicais_arteriais_bila__padrao": {
    "base_title": "Doppler colorido de vasos cervicais arteriais bilateral (carótidas e vertebrais)",
    "spec": "Padrão",
-   "price": "R$ 350",
+   "price": "R$ 350,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8254,7 +8254,7 @@
   "ultrassom__doppler__doppler_de_aorta__padrao": {
    "base_title": "Doppler de aorta",
    "spec": "Padrão",
-   "price": "R$ 350",
+   "price": "R$ 350,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8292,7 +8292,7 @@
   "ultrassom__doppler__doppler_de_arterias_renais__padrao": {
    "base_title": "Doppler de artérias renais",
    "spec": "Padrão",
-   "price": "R$ 350",
+   "price": "R$ 350,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8330,7 +8330,7 @@
   "ultrassom__doppler__doppler_hepatico__padrao": {
    "base_title": "Doppler hepático",
    "spec": "Padrão",
-   "price": "R$ 350",
+   "price": "R$ 350,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8368,7 +8368,7 @@
   "ultrassom__doppler__doppler_venoso_de_membro_unilateral_mapeamento_de___padrao": {
    "base_title": "Doppler venoso de membro unilateral (mapeamento de varizes)",
    "spec": "Padrão",
-   "price": "R$ 275",
+   "price": "R$ 275,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8406,7 +8406,7 @@
   "ultrassom__doppler__doppler_venoso_de_membro_unilateral_para_descartar__lado_esquerdo": {
    "base_title": "Doppler venoso de membro unilateral para descartar trombose",
    "spec": "Lado esquerdo",
-   "price": "R$ 275",
+   "price": "R$ 275,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8444,7 +8444,7 @@
   "ultrassom__doppler__doppler_venoso_de_membro_unilateral_para_descartar__lado_direito": {
    "base_title": "Doppler venoso de membro unilateral para descartar trombose",
    "spec": "Lado direito",
-   "price": "R$ 275",
+   "price": "R$ 275,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8482,7 +8482,7 @@
   "ultrassom__doppler__doppler_venoso_de_membros_para_descartar_trombose__ambos_os_lados": {
    "base_title": "Doppler venoso de membros para descartar trombose",
    "spec": "Ambos os lados",
-   "price": "R$ 550",
+   "price": "R$ 550,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8520,7 +8520,7 @@
   "ultrassom__doppler__doppler_venoso_de_membros_inferiores_ou_superiores__padrao": {
    "base_title": "Doppler venoso de membros inferiores ou superiores",
    "spec": "Padrão",
-   "price": "R$ 550",
+   "price": "R$ 550,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8558,7 +8558,7 @@
   "ultrassom__mama_partes__mamas__padrao": {
    "base_title": "Mamas",
    "spec": "Padrão",
-   "price": "R$ 180",
+   "price": "R$ 180,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8596,7 +8596,7 @@
   "ultrassom__pelve_obst__obstetrica_com_3d__padrao": {
    "base_title": "Obstétrica com 3D",
    "spec": "Padrão",
-   "price": "R$ 350",
+   "price": "R$ 350,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8634,7 +8634,7 @@
   "ultrassom__pelve_obst__obstetrica_com_doppler_colorido__padrao": {
    "base_title": "Obstétrica com Doppler colorido",
    "spec": "Padrão",
-   "price": "R$ 350",
+   "price": "R$ 350,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8672,7 +8672,7 @@
   "ultrassom__pelve_obst__obstetrica_gestacao_multipla__padrao": {
    "base_title": "Obstétrica - gestação múltipla",
    "spec": "Padrão",
-   "price": "R$ 550",
+   "price": "R$ 550,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8710,7 +8710,7 @@
   "ultrassom__pelve_obst__obstetrica_morfologica_1o_trimestre_com_translucen__padrao": {
    "base_title": "Obstétrica morfológica - 1º trimestre com translucência nucal",
    "spec": "Padrão",
-   "price": "R$ 550",
+   "price": "R$ 550,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8748,7 +8748,7 @@
   "ultrassom__pelve_obst__obstetrica_morfologica_2o_trimestre__padrao": {
    "base_title": "Obstétrica morfológica - 2º trimestre",
    "spec": "Padrão",
-   "price": "R$ 550",
+   "price": "R$ 550,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8786,7 +8786,7 @@
   "ultrassom__pelve_obst__obstetrica_multipla__com_doppler": {
    "base_title": "Obstétrica múltipla",
    "spec": "Com Doppler",
-   "price": "R$ 700",
+   "price": "R$ 700,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8824,7 +8824,7 @@
   "ultrassom__pelve_obst__obstetrica_simples_sem_3d__padrao": {
    "base_title": "Obstétrica simples sem 3D",
    "spec": "Padrão",
-   "price": "R$ 180",
+   "price": "R$ 180,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8862,7 +8862,7 @@
   "ultrassom__pelve_obst__obstetrica_transvaginal__padrao": {
    "base_title": "Obstétrica transvaginal",
    "spec": "Padrão",
-   "price": "R$ 180",
+   "price": "R$ 180,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8900,7 +8900,7 @@
   "ultrassom__mama_partes__partes_moles_pele_e_subcutaneo_suturas_cranianas__padrao": {
    "base_title": "Partes moles (pele e subcutâneo, suturas cranianas)",
    "spec": "Padrão",
-   "price": "R$ 180",
+   "price": "R$ 180,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8938,7 +8938,7 @@
   "ultrassom__mama_partes__tireoide__padrao": {
    "base_title": "Tireoide",
    "spec": "Sem Doppler",
-   "price": "R$ 180",
+   "price": "R$ 180,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -8976,7 +8976,7 @@
   "ultrassom__mama_partes__tireoide__com_doppler": {
    "base_title": "Tireoide",
    "spec": "Com Doppler",
-   "price": "R$ 350",
+   "price": "R$ 350,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -9014,7 +9014,7 @@
   "ultrassom__mama_partes__transfontanela__padrao": {
    "base_title": "Transfontanela",
    "spec": "Padrão",
-   "price": "R$ 180",
+   "price": "R$ 180,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -9052,7 +9052,7 @@
   "ultrassom__pelve_obst__transvaginal__padrao": {
    "base_title": "Transvaginal",
    "spec": "Padrão",
-   "price": "R$ 180",
+   "price": "R$ 180,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -9090,7 +9090,7 @@
   "ultrassom__pelve_obst__transvaginal_pesquisa_de_endometriose__padrao": {
    "base_title": "Transvaginal - pesquisa de endometriose",
    "spec": "Padrão",
-   "price": "R$ 730",
+   "price": "R$ 730,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -9128,7 +9128,7 @@
   "ultrassom__mama_partes__ultrassom_de_unha__padrao": {
    "base_title": "Ultrassom de unha",
    "spec": "Padrão",
-   "price": "R$ 180",
+   "price": "R$ 180,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -9166,7 +9166,7 @@
   "ultrassom__mama_partes__ultrassom_dermatologico_avaliacao_de_nodulos_lesoe__padrao": {
    "base_title": "Ultrassom dermatológico (avaliação de nódulos / lesões de pele)",
    "spec": "Padrão",
-   "price": "R$ 180",
+   "price": "R$ 180,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -9204,7 +9204,7 @@
   "ultrassom__mama_partes__ultrassom_dermatologico_mapeamento_vascular_da_fac__padrao": {
    "base_title": "Ultrassom dermatológico (mapeamento vascular da face)",
    "spec": "Padrão",
-   "price": "R$ 660",
+   "price": "R$ 660,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -9242,7 +9242,7 @@
   "ultrassom__biopsias__biopsia_de_tireoide_sempre_entrar_em_contato_antes__padrao": {
    "base_title": "Biópsia de tireoide (sempre entrar em contato antes)",
    "spec": "Padrão",
-   "price": "R$ 1100",
+   "price": "R$ 1.100,00",
    "convenios": [],
    "payment_methods": "Pix, cartão de crédito, cartão de débito e dinheiro.",
    "installments": "Parcelamento em até 6 vezes sem juros",
@@ -9257,7 +9257,7 @@
   "ultrassom__biopsias__biopsia_de_mama_sempre_entrar_em_contato_antes__padrao": {
    "base_title": "Biópsia de mama (sempre entrar em contato antes)",
    "spec": "Padrão",
-   "price": "R$ 1500",
+   "price": "R$ 1.500,00",
    "convenios": [],
    "payment_methods": "Pix, cartão de crédito, cartão de débito e dinheiro.",
    "installments": "Parcelamento em até 6 vezes sem juros",
@@ -9272,7 +9272,7 @@
   "ultrassom__biopsias__biopsia_de_prostata__com_sedacao": {
    "base_title": "Biópsia de próstata",
    "spec": "Com sedação",
-   "price": "R$ 3000",
+   "price": "R$ 3.000,00",
    "convenios": [],
    "payment_methods": "Pix, cartão de crédito, cartão de débito e dinheiro.",
    "installments": "Parcelamento em até 6 vezes sem juros",
@@ -9287,7 +9287,7 @@
   "ultrassom__biopsias__biopsia_de_prostata__sem_sedacao": {
    "base_title": "Biópsia de próstata",
    "spec": "Sem sedação",
-   "price": "R$ 2500",
+   "price": "R$ 2.500,00",
    "convenios": [],
    "payment_methods": "Pix, cartão de crédito, cartão de débito e dinheiro.",
    "installments": "Parcelamento em até 6 vezes sem juros",
@@ -9302,7 +9302,7 @@
   "raio-x__torax_abdome__abdome_agudo__padrao": {
    "base_title": "Abdome agudo",
    "spec": "Padrão",
-   "price": "R$ 90",
+   "price": "R$ 90,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -9340,7 +9340,7 @@
   "raio-x__torax_abdome__abdome_simples__padrao": {
    "base_title": "Abdome simples",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -9378,7 +9378,7 @@
   "raio-x__cabeca_face__adenoides_ou_cavum__padrao": {
    "base_title": "Adenoides ou cavum",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -9416,7 +9416,7 @@
   "raio-x__membros__antebraco_unilateral__padrao": {
    "base_title": "Antebraço - unilateral",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -9454,7 +9454,7 @@
   "raio-x__cabeca_face__arcos_zigomaticos_malar_ou_apofises_estiloides__padrao": {
    "base_title": "Arcos zigomáticos, malar ou apófises estiloides",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -9492,7 +9492,7 @@
   "raio-x__membros__articulacao_acromioclavicular__padrao": {
    "base_title": "Articulação acromioclavicular",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -9530,7 +9530,7 @@
   "raio-x__membros__articulacao_coxofemoral_quadril__padrao": {
    "base_title": "Articulação coxofemoral (quadril)",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -9568,7 +9568,7 @@
   "raio-x__membros__articulacao_escapuloumeral_ombro__padrao": {
    "base_title": "Articulação escapuloumeral (ombro)",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -9606,7 +9606,7 @@
   "raio-x__torax_abdome__articulacao_esternoclavicular__padrao": {
    "base_title": "Articulação esternoclavicular",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -9644,7 +9644,7 @@
   "raio-x__cabeca_face__articulacao_temporomandibular_bilateral__padrao": {
    "base_title": "Articulação temporomandibular - bilateral",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -9682,7 +9682,7 @@
   "raio-x__membros__articulacao_tibiotarsica_tornozelo__padrao": {
    "base_title": "Articulação tibiotársica (tornozelo)",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -9720,7 +9720,7 @@
   "raio-x__coluna__articulacoes_sacroiliacas__padrao": {
    "base_title": "Articulações sacroilíacas",
    "spec": "Padrão",
-   "price": "R$ 90",
+   "price": "R$ 90,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -9758,7 +9758,7 @@
   "raio-x__torax_abdome__bacia_ap_rotina__padrao": {
    "base_title": "Bacia AP (rotina)",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -9796,7 +9796,7 @@
   "raio-x__membros__braco__padrao": {
    "base_title": "Braço",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -9834,7 +9834,7 @@
   "raio-x__membros__calcaneo__padrao": {
    "base_title": "Calcâneo",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -9872,7 +9872,7 @@
   "raio-x__membros__clavicula__padrao": {
    "base_title": "Clavícula",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -9910,7 +9910,7 @@
   "raio-x__coluna__coluna_cervical__2_incidencias": {
    "base_title": "Coluna cervical",
    "spec": "2 incidências",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -9948,7 +9948,7 @@
   "raio-x__coluna__coluna_cervical__5_incidencias": {
    "base_title": "Coluna cervical",
    "spec": "5 incidências",
-   "price": "R$ 100",
+   "price": "R$ 100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -9986,7 +9986,7 @@
   "raio-x__coluna__coluna_dorsal__2_incidencias": {
    "base_title": "Coluna dorsal",
    "spec": "2 incidências",
-   "price": "R$ 80",
+   "price": "R$ 80,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10024,7 +10024,7 @@
   "raio-x__coluna__coluna_dorsal__4_incidencias": {
    "base_title": "Coluna dorsal",
    "spec": "4 incidências",
-   "price": "R$ 90",
+   "price": "R$ 90,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10062,7 +10062,7 @@
   "raio-x__coluna__coluna_dorso_lombar_para_escoliose__padrao": {
    "base_title": "Coluna dorso-lombar para escoliose",
    "spec": "Padrão",
-   "price": "R$ 100",
+   "price": "R$ 100,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10100,7 +10100,7 @@
   "raio-x__coluna__coluna_lombossacra__3_incidencias": {
    "base_title": "Coluna lombossacra",
    "spec": "3 incidências",
-   "price": "R$ 90",
+   "price": "R$ 90,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10138,7 +10138,7 @@
   "raio-x__coluna__coluna_lombossacra__5_incidencias": {
    "base_title": "Coluna lombossacra",
    "spec": "5 incidências",
-   "price": "R$ 110",
+   "price": "R$ 110,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10176,7 +10176,7 @@
   "raio-x__coluna__coluna_total_para_escoliose_panoramica__padrao": {
    "base_title": "Coluna total para escoliose - panorâmica",
    "spec": "Padrão",
-   "price": "R$ 250",
+   "price": "R$ 250,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10214,7 +10214,7 @@
   "raio-x__coluna__coluna_cervical_dinamica_funcional__padrao": {
    "base_title": "Coluna cervical dinâmica funcional",
    "spec": "Padrão",
-   "price": "R$ 120",
+   "price": "R$ 120,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10252,7 +10252,7 @@
   "raio-x__torax_abdome__costelas_por_hemitorax_arcos_costais__padrao": {
    "base_title": "Costelas por hemitórax - arcos costais",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10290,7 +10290,7 @@
   "raio-x__membros__cotovelo_unilateral__padrao": {
    "base_title": "Cotovelo - unilateral",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10328,7 +10328,7 @@
   "raio-x__membros__coxa_unilateral__padrao": {
    "base_title": "Coxa - unilateral",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10366,7 +10366,7 @@
   "raio-x__cabeca_face__cranio__2_incidencias": {
    "base_title": "Crânio",
    "spec": "2 incidências",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10404,7 +10404,7 @@
   "raio-x__cabeca_face__cranio__3_incidencias": {
    "base_title": "Crânio",
    "spec": "3 incidências",
-   "price": "R$ 70",
+   "price": "R$ 70,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10442,7 +10442,7 @@
   "raio-x__cabeca_face__cranio__4_incidencias": {
    "base_title": "Crânio",
    "spec": "4 incidências",
-   "price": "R$ 80",
+   "price": "R$ 80,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10480,7 +10480,7 @@
   "raio-x__membros__escafoide__padrao": {
    "base_title": "Escafoide",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10518,7 +10518,7 @@
   "raio-x__membros__escanometria__padrao": {
    "base_title": "Escanometria",
    "spec": "Padrão",
-   "price": "R$ 260",
+   "price": "R$ 260,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10556,7 +10556,7 @@
   "raio-x__torax_abdome__esterno__padrao": {
    "base_title": "Esterno",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10594,7 +10594,7 @@
   "raio-x__coluna__incidencia_adicional_de_coluna__padrao": {
    "base_title": "Incidência adicional de coluna",
    "spec": "Padrão",
-   "price": "R$ 20",
+   "price": "R$ 20,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10632,7 +10632,7 @@
   "raio-x__outras__incidencia_adicional__padrao": {
    "base_title": "Incidência adicional",
    "spec": "Padrão",
-   "price": "R$ 20",
+   "price": "R$ 20,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10670,7 +10670,7 @@
   "raio-x__cabeca_face__incidencia_adicional_de_cranio_ou_face__padrao": {
    "base_title": "Incidência adicional de crânio ou face",
    "spec": "Padrão",
-   "price": "R$ 20",
+   "price": "R$ 20,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10708,7 +10708,7 @@
   "raio-x__outras__incidencia_adicional_de_membro_inferior__padrao": {
    "base_title": "Incidência adicional de membro inferior",
    "spec": "Padrão",
-   "price": "R$ 20",
+   "price": "R$ 20,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10746,7 +10746,7 @@
   "raio-x__outras__incidencia_adicional_de_membro_superior__padrao": {
    "base_title": "Incidência adicional de membro superior",
    "spec": "Padrão",
-   "price": "R$ 20",
+   "price": "R$ 20,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10784,7 +10784,7 @@
   "raio-x__membros__joelho_unilateral__padrao": {
    "base_title": "Joelho - unilateral",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10822,7 +10822,7 @@
   "raio-x__membros__mao_ou_quirodactilo_unilateral__padrao": {
    "base_title": "Mão ou quirodáctilo - unilateral",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10860,7 +10860,7 @@
   "raio-x__membros__maos_e_punhos_para_idade_ossea__padrao": {
    "base_title": "Mãos e punhos para idade óssea",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10898,7 +10898,7 @@
   "raio-x__cabeca_face__maxilar_inferior__padrao": {
    "base_title": "Maxilar inferior",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10936,7 +10936,7 @@
   "raio-x__membros__omoplata_ou_escapula__padrao": {
    "base_title": "Omoplata ou escápula",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -10974,7 +10974,7 @@
   "raio-x__cabeca_face__orbitas_bilateral__padrao": {
    "base_title": "Órbitas - bilateral",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -11012,7 +11012,7 @@
   "raio-x__cabeca_face__orelha_mastoides_ou_rochedos_bilateral__padrao": {
    "base_title": "Orelha, mastoides ou rochedos - bilateral",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -11050,7 +11050,7 @@
   "raio-x__cabeca_face__ossos_da_face__padrao": {
    "base_title": "Ossos da face",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -11088,7 +11088,7 @@
   "raio-x__membros__panoramica_dos_membros_inferiores__padrao": {
    "base_title": "Panorâmica dos membros inferiores",
    "spec": "Padrão",
-   "price": "R$ 220",
+   "price": "R$ 220,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -11126,7 +11126,7 @@
   "raio-x__membros__patela__padrao": {
    "base_title": "Patela",
    "spec": "Padrão",
-   "price": "R$ 85",
+   "price": "R$ 85,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -11164,7 +11164,7 @@
   "raio-x__membros__pe_ou_pododactilo_unilateral__padrao": {
    "base_title": "Pé ou pododáctilo - unilateral",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -11202,7 +11202,7 @@
   "raio-x__membros__perna_unilateral__padrao": {
    "base_title": "Perna - unilateral",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -11240,7 +11240,7 @@
   "raio-x__membros__punho_unilateral__padrao": {
    "base_title": "Punho - unilateral",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -11278,7 +11278,7 @@
   "raio-x__coluna__sacro_coccix__padrao": {
    "base_title": "Sacro - cóccix",
    "spec": "Padrão",
-   "price": "R$ 90",
+   "price": "R$ 90,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -11316,7 +11316,7 @@
   "raio-x__cabeca_face__seios_da_face__padrao": {
    "base_title": "Seios da face",
    "spec": "Padrão",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -11354,7 +11354,7 @@
   "raio-x__cabeca_face__sela_turcica__padrao": {
    "base_title": "Sela túrcica",
    "spec": "Padrão",
-   "price": "R$ 80",
+   "price": "R$ 80,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -11392,7 +11392,7 @@
   "raio-x__torax_abdome__torax__1_incidencia": {
    "base_title": "Tórax",
    "spec": "1 incidência",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -11430,7 +11430,7 @@
   "raio-x__torax_abdome__torax__2_incidencias": {
    "base_title": "Tórax",
    "spec": "2 incidências",
-   "price": "R$ 60",
+   "price": "R$ 60,00",
    "convenios": [
     "Bradesco",
     "Geap",
@@ -11468,7 +11468,7 @@
   "raio-x__torax_abdome__torax__3_incidencias": {
    "base_title": "Tórax",
    "spec": "3 incidências",
-   "price": "R$ 80",
+   "price": "R$ 80,00",
    "convenios": [
     "Bradesco",
     "Geap",
