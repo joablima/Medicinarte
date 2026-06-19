@@ -82,31 +82,9 @@ app.post("/webhook", async (req, res) => {
   } catch (e) { console.error("Erro no webhook:", e.message); }
 });
 
-// Faz upload do logo uma vez e reutiliza o media_id (imagem chega já carregada)
-let cachedMediaId = null;
-async function getLogoMediaId() {
-  if (cachedMediaId) return cachedMediaId;
-  const file = path.join(__dirname, "public", "logo.png");
-  if (!WHATSAPP_TOKEN || !fs.existsSync(file)) return null;
-  try {
-    const form = new FormData();
-    form.append("messaging_product", "whatsapp");
-    form.append("type", "image/png");
-    form.append("file", new Blob([fs.readFileSync(file)], { type: "image/png" }), "logo.png");
-    const r = await fetch(`https://graph.facebook.com/${GRAPH_VERSION}/${PHONE_NUMBER_ID}/media`, {
-      method: "POST", headers: { Authorization: `Bearer ${WHATSAPP_TOKEN}` }, body: form,
-    });
-    const j = await r.json();
-    if (j.id) { cachedMediaId = j.id; console.log("Logo enviado, media_id:", j.id); return j.id; }
-    console.error("Upload do logo falhou:", JSON.stringify(j));
-  } catch (e) { console.error("Erro no upload do logo:", e.message); }
-  return null;
-}
-
-async function buildHeader() {
-  const mediaId = await getLogoMediaId();
-  if (mediaId) return { type: "image", image: { id: mediaId } };      // já carregada
-  if (logoUrl) return { type: "image", image: { link: logoUrl } };    // por link (fallback)
+// Cabeçalho da mensagem: o WhatsApp exige LINK para imagem em mensagens interativas (flow)
+function buildHeader() {
+  if (logoUrl) return { type: "image", image: { link: logoUrl } };
   return { type: "text", text: "Medicinarte" };
 }
 
@@ -114,7 +92,7 @@ async function sendFlow(to) {
   if (!WHATSAPP_TOKEN || !FLOW_ID) { console.error("Falta WHATSAPP_TOKEN ou FLOW_ID."); return; }
   const interactive = {
     type: "flow",
-    header: await buildHeader(),
+    header: buildHeader(),
     body: { text: "Olá, que bom ter você por aqui! Por aqui, você terá acesso a todos os nossos serviços. 💙\n\nClique em iniciar atendimento para fazer o seu agendamento, ver resultados de exames ou tirar dúvidas com nossos atendentes." },
     action: {
       name: "flow",
