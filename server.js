@@ -36,16 +36,41 @@ app.get("/webhook", (req, res) => {
   return res.sendStatus(403);
 });
 
+// ----- Modo atendente: clientes que escolheram "Falar com atendente" -----
+const attendantMode = new Map(); // from -> timestamp
+const ATTENDANT_TTL = 12 * 60 * 60 * 1000; // 12 horas
+
 // ----- Webhook: mensagens recebidas (POST) -> envia o Flow -----
 app.post("/webhook", async (req, res) => {
   res.sendStatus(200); // responde rápido para a Meta
   try {
     const value = req.body?.entry?.[0]?.changes?.[0]?.value;
     const msg = value?.messages?.[0];
-    // só dispara em mensagem de TEXTO do cliente (evita loop ao concluir o flow)
-    if (msg && msg.type === "text") {
-      console.log("Mensagem recebida de", msg.from, "->", msg.text?.body);
-      await sendFlow(msg.from);
+    if (!msg) return;
+    const from = msg.from;
+
+    // Conclusão de um Flow (resposta enviada pelo cliente) — contém os dados preenchidos
+    if (msg.type === "interactive" && msg.interactive?.type === "nfm_reply") {
+      let resp = {};
+      try { resp = JSON.parse(msg.interactive.nfm_reply.response_json || "{}"); } catch {}
+      console.log("Flow concluído por", from, "->", JSON.stringify(resp));
+      if (resp.status === "atendente") {
+        attendantMode.set(from, Date.now());
+        console.log(from, "entrou em modo atendente — flow não será reenviado automaticamente.");
+      }
+      return; // nunca reenvia o flow ao receber uma conclusão
+    }
+
+    // Mensagem de texto -> envia o Flow, exceto se o cliente está em atendimento humano
+    if (msg.type === "text") {
+      const since = attendantMode.get(from);
+      if (since && Date.now() - since < ATTENDANT_TTL) {
+        console.log("Ignorado (modo atendente):", from);
+        return;
+      }
+      if (since) attendantMode.delete(from); // expirou
+      console.log("Mensagem de", from, "->", msg.text?.body);
+      await sendFlow(from);
     }
   } catch (e) { console.error("Erro no webhook:", e.message); }
 });
