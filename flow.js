@@ -38,6 +38,29 @@ const ATD = { id:"atendente", title:"Falar com atendente" };
 const withAtd = arr => [...opt(arr), ATD];
 const planOptions = () => [{id:"none",title:"Não possuo plano de saúde"}, ...DB.planos.map(p=>({id:p,title:short(p)})), ATD];
 
+const FIELD={preparo:"preparation",contraindicacoes:"contraindications",prazo:"delivery_time",documentos:"documents"};
+const INFO_LABEL={preco:"Valor particular",preparo:"Preparo obrigatório",contraindicacoes:"Contraindicações",convenios:"Convênios aceitos",prazo:"Prazo de entrega",documentos:"Documentos necessários"};
+function variantList(modality,bodypart,base,variant){
+  let ids=Object.keys(DB.variants).filter(id=>id.startsWith(modality+"__"));
+  if(bodypart&&bodypart!=="_") ids=ids.filter(id=>id.split("__")[1]===bodypart);
+  if(base) ids=ids.filter(id=>id.startsWith(base+"__"));
+  if(variant) ids=ids.filter(id=>id===variant);
+  return ids.map(id=>DB.variants[id]);
+}
+function fieldValue(v,it){
+  if(it==="preco") return v.price;
+  if(it==="convenios"){const c=v.convenios||[]; return c.length? c.join(", "):"Apenas particular (não atende por convênio).";}
+  return v[FIELD[it]]||"-";
+}
+function uniformValue(vs,it){
+  const norm=x=>String(x).replace(/[•·\-]/g,"").replace(/\s+/g,"").toLowerCase();
+  const set=new Set(vs.map(v=>norm(fieldValue(v,it))));
+  return set.size===1?fieldValue(vs[0],it):null;
+}
+const modalityTitle=m=>(DB.modalities.find(x=>x.id===m)||{}).title||m;
+const bodypartTitle=(t,bp)=>((t.bodyparts||[]).find(b=>b.id===bp)||{}).title||bp;
+function infoResult(it,ctx,value){ return {screen:"INFO_RESULT",data:{result_title:`${INFO_LABEL[it]} — ${ctx}`,result_text:value}}; }
+
 function detailScreen(variantId, plano){
   const v=DB.variants[variantId];
   const base=DB.bases[variantId.split("__").slice(0,3).join("__")];
@@ -64,12 +87,12 @@ function getNextScreen(body){
   if(data.error) return {data:{acknowledged:true}};
   if(action==="INIT") return {screen:"WELCOME",data:{}};
   if(action!=="data_exchange") return {screen:"WELCOME",data:{}};
-  if([data.need,data.modality,data.bodypart,data.base,data.variant,data.plano,data.decision].includes("atendente")) return {screen:"ATTENDANT",data:{reason:"Falar com atendente"}};
+  if([data.need,data.modality,data.bodypart,data.base,data.variant,data.plano,data.decision,data.info_type,data.info_decision].includes("atendente")) return {screen:"ATTENDANT",data:{reason:"Falar com atendente"}};
 
   switch(screen){
     case "NEED":
       if(data.need==="resultado_exame") return {screen:"ATTENDANT",data:{reason:"Resultado de exame"}};
-      if(data.need==="informacoes") return {screen:"INFO",data:{}};
+      if(data.need==="informacoes") return {screen:"INFO_TYPE",data:{}};
       return {screen:"CHOOSE_MODALITY",data:{modalities:withAtd(DB.modalities)}};
     case "CHOOSE_MODALITY":{
       const t=DB.tree[data.modality];
@@ -118,6 +141,39 @@ function getNextScreen(body){
     }
     case "ATTENDANT":
       return {screen:"CONFIRM_ATTENDANT",data:{name:data.nome||""}};
+    case "INFO_TYPE":{
+      const it=data.info_type;
+      if(it==="endereco") return {screen:"INFO_RESULT",data:{result_title:"Endereço e horários",result_text:"Travessa Antunes de Alencar, 152 — Bosque — CEP 69900-481, Rio Branco/AC.\nTelefones: (68) 3223-3830 / (68) 99980-3830.\nSeg–Sex 07:00–22:00 • Sáb 07:00–20:00 • Dom: fechado."}};
+      return {screen:"INFO_MODALITY",data:{info_type:it,modalities:withAtd(DB.modalities)}};
+    }
+    case "INFO_MODALITY":{
+      const it=data.info_type,m=data.modality,t=DB.tree[m];
+      if(it!=="preco"){const u=uniformValue(variantList(m),it); if(u!==null) return infoResult(it,modalityTitle(m),u);}
+      if(t.has_bodyparts) return {screen:"INFO_BODYPART",data:{info_type:it,modality:m,bodyparts:withAtd(t.bodyparts)}};
+      return {screen:"INFO_PROCEDURE",data:{info_type:it,modality:m,bodypart:"_",procedures:withAtd(t.procedures)}};
+    }
+    case "INFO_BODYPART":{
+      const it=data.info_type,m=data.modality,bp=data.bodypart,t=DB.tree[m];
+      if(it!=="preco"){const u=uniformValue(variantList(m,bp),it); if(u!==null) return infoResult(it,bodypartTitle(t,bp),u);}
+      return {screen:"INFO_PROCEDURE",data:{info_type:it,modality:m,bodypart:bp,procedures:withAtd(t.procedures_by_bodypart[bp]||[])}};
+    }
+    case "INFO_PROCEDURE":{
+      const it=data.info_type,base=DB.bases[data.base];
+      if(!base) return {screen:"INFO_MODALITY",data:{info_type:it,modalities:withAtd(DB.modalities)}};
+      if(it!=="preco"){const u=uniformValue(variantList(data.modality,data.bodypart,data.base),it); if(u!==null) return infoResult(it,base.title,u);}
+      if(base.variants.length>1) return {screen:"INFO_SPECIFICITY",data:{info_type:it,modality:data.modality,bodypart:data.bodypart,base:data.base,base_title:base.title,specificities:withAtd(base.variants.map(v=>({id:v.id,title:v.spec})))}};
+      const v0=DB.variants[base.variants[0].id]; return infoResult(it,base.title,fieldValue(v0,it));
+    }
+    case "INFO_SPECIFICITY":{
+      const it=data.info_type,v=DB.variants[data.variant];
+      const base=DB.bases[data.variant.split("__").slice(0,3).join("__")];
+      const name=base.title+(v.spec&&v.spec!=="Padrão"?` – ${v.spec}`:"");
+      return infoResult(it,name,fieldValue(v,it));
+    }
+    case "INFO_RESULT":{
+      if(data.info_decision==="outra") return {screen:"INFO_TYPE",data:{}};
+      return {screen:"END",data:{}};
+    }
     default:
       return {screen:"WELCOME",data:{}};
   }
