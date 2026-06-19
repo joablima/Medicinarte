@@ -66,8 +66,10 @@ function detailScreen(variantId, plano){
   const base=DB.bases[variantId.split("__").slice(0,3).join("__")];
   const fullName=base.title+(v.spec&&v.spec!=="Padrão"?` – ${v.spec}`:"");
   const isScheduled=/hora marcada/i.test(v.scheduling_method);
-  const agend=isScheduled?"🗓️ Agendamento por hora marcada (horário a confirmar com a clínica).":"🚶 Atendimento por ordem de chegada (sem horário individual).";
-  const pagamento=`Valor particular: ${v.price}\nParcelamento: ${v.installments}\nFormas de pagamento: ${v.payment_methods}`;
+  const agend=isScheduled?"📅 Atendimento exclusivo com hora marcada. Garanta o seu horário!":"📅 Atendimento por ordem de chegada.";
+  const m=(v.installments||"").match(/(\d+)\s*vez/);
+  const parcelaLine = m ? `💳 Parcele em ${/até/i.test(v.installments)?"até ":""}${m[1]}x sem juros no cartão! (Também aceitamos Pix e dinheiro).` : "💳 Pagamento à vista (Pix, cartão ou dinheiro).";
+  const pagamento=`💰 Valor: ${v.price}\n${parcelaLine}`;
   let situacao,header;
   if(!plano||plano==="none"){situacao="1";header=pagamento;}
   else{const cobre=(v.convenios||[]).some(c=>c.toLowerCase()===String(plano).toLowerCase());
