@@ -31,7 +31,7 @@ function isValidCPF(cpf){cpf=onlyDigits(cpf);
   let d2=(sum*10)%11; if(d2===10) d2=0; return d2===parseInt(cpf[10],10);
 }
 function formatCPF(cpf){cpf=onlyDigits(cpf); return cpf.length===11?`${cpf.slice(0,3)}.${cpf.slice(3,6)}.${cpf.slice(6,9)}-${cpf.slice(9)}`:cpf;}
-const collectData = ext => ({ time_slots:timeSlots(), max_dob:ymd(todayUTC()), ...dateLimits(), ...ext });
+const collectData = ext => ({ time_slots:timeSlots(), ...dateLimits(), ...ext });
 const short = t => (t && t.length>30) ? t.slice(0,29)+"…" : t;
 const opt = arr => (arr||[]).map(o => ({ id:o.id, title:short(o.title) }));
 const ATD = { id:"atendente", title:"Falar com atendente" };
@@ -84,6 +84,12 @@ function detailScreen(variantId, plano){
     has_plan:!!plano&&plano!=="none",is_scheduled:isScheduled,scheduling_method:v.scheduling_method,situacao}};
 }
 
+function validBirth(d,m,a){
+  if(!Number.isInteger(d)||!Number.isInteger(m)||!Number.isInteger(a)) return false;
+  if(m<1||m>12||a<1920||a>2026||d<1||d>31) return false;
+  const dt=new Date(Date.UTC(a,m-1,d));
+  return dt.getUTCFullYear()===a&&dt.getUTCMonth()===m-1&&dt.getUTCDate()===d;
+}
 function getNextScreen(body){
   const {screen,action,data={}}=body;
   if(action==="ping") return {data:{status:"active"}};
@@ -135,8 +141,16 @@ function getNextScreen(body){
           has_plan:!!data.plano&&data.plano!=="none",is_scheduled:isSched,scheduling_method:data.scheduling_method,
           error_message:"❌ CPF inválido. Confira e digite novamente (apenas os 11 números)."})};
       }
+      const dia=parseInt(data.nasc_dia,10),mes=parseInt(data.nasc_mes,10),ano=parseInt(data.nasc_ano,10);
+      if(!validBirth(dia,mes,ano)){
+        return {screen:"COLLECT_DATA",data:collectData({
+          procedure_name:data.procedure_name,plano:data.plano,
+          has_plan:!!data.plano&&data.plano!=="none",is_scheduled:isSched,scheduling_method:data.scheduling_method,
+          error_message:"❌ Data de nascimento inválida. Verifique dia (1-31), mês (1-12) e ano (1920-2026)."})};
+      }
+      const nascimento=`${pad(dia)}/${pad(mes)}/${ano}`;
       const common={procedure_name:data.procedure_name,name:data.nome||"",cpf:formatCPF(data.cpf),carteira:data.carteira||"",
-        nascimento:fmtDate(data.nascimento),appointment_day:fmtDay(data.data_agendamento)};
+        nascimento,appointment_day:fmtDay(data.data_agendamento)};
       if(isSched) return {screen:"CONFIRM_APPOINTMENT",data:{...common,horario:data.horario||"-"}};
       const dd=parseInput(data.data_agendamento);
       const bh=dd?(dd.getUTCDay()===6?"07:00 às 20:00":"07:00 às 22:00"):"-";
