@@ -36,7 +36,8 @@ const short = t => (t && t.length>30) ? t.slice(0,29)+"…" : t;
 const opt = arr => (arr||[]).map(o => ({ id:o.id, title:short(o.title) }));
 const ATD = { id:"atendente", title:"Falar com atendente" };
 const withAtd = arr => [...opt(arr), ATD];
-const planOptions = () => [{id:"none",title:"Não possuo plano de saúde"}, ...DB.planos.map(p=>({id:p,title:short(p)})), ATD];
+const EXCLUDE_PLANS=["ab despachante","despachante barros","jardel"];
+const planOptions = () => [{id:"none",title:"Não possuo plano de saúde"}, ...DB.planos.filter(p=>!EXCLUDE_PLANS.includes(p.toLowerCase())).map(p=>({id:p,title:short(p.replace(/\.$/,""))}))];
 
 const FIELD={preparo:"preparation",contraindicacoes:"contraindications",prazo:"delivery_time",documentos:"documents"};
 const INFO_LABEL={preco:"Valor particular",preparo:"Preparo obrigatório",contraindicacoes:"Contraindicações",convenios:"Convênios aceitos",prazo:"Prazo de entrega",documentos:"Documentos necessários"};
