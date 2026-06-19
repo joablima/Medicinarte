@@ -98,3 +98,30 @@ PRIVATE_KEY="$(cat private.pem)" PASSPHRASE="sua_senha" node server.js
 - **Falar com atendente** em qualquer etapa → **ATTENDANT** → **CONFIRM_ATTENDANT** (consultor responde direto no WhatsApp).
 
 > Para aplicar: faça o push dos arquivos atualizados (flow.js + data/procedimentos.json) para o GitHub (o Render redeploya), e cole o conteúdo de **Fluxo_WhatsApp_Medicinarte.json** no editor do Flow na Meta (substituindo o JSON de exemplo que ainda está lá).
+
+---
+
+## Disparar o Flow direto pela Cloud API (sem n8n)
+O próprio servidor agora também recebe as mensagens (webhook) e envia o Flow.
+
+### Variáveis adicionais no Render (Environment)
+- `WHATSAPP_TOKEN` — token de acesso (de preferência System User, permanente).
+- `PHONE_NUMBER_ID` — 1086045857923395 (+55 11 97877-7953).
+- `FLOW_ID` — ID do Flow (aparece no editor do Flow / na URL).
+- `VERIFY_TOKEN` — você escolhe (ex.: medicinarte); use o mesmo no passo do webhook.
+- `FLOW_MODE` — `draft` para testar (destinatário precisa ser testador); `published` após publicar.
+
+### Configurar o webhook na Meta (substituindo o n8n)
+1. Meta → seu App → WhatsApp → Configuração → **Webhook**.
+2. **Callback URL**: `https://medicinarte.onrender.com/webhook`
+3. **Verify token**: o mesmo valor de `VERIFY_TOKEN`.
+4. Clique em **Verificar e salvar** (o servidor responde ao desafio).
+5. Em **Campos do webhook**, assine **messages**.
+6. (Para voltar ao n8n depois, basta trocar a Callback URL de volta.)
+
+### Como passa a funcionar
+- Cliente manda **qualquer mensagem de texto** para +55 11 97877-7953.
+- A Meta chama `POST /webhook` → o servidor envia o Flow (botão "Começar") para o cliente.
+- Ao tocar em "Começar", o Flow abre e usa o endpoint de dados (`POST /`).
+
+> Observação: o envio só funciona após a conta atender aos **requisitos de integridade** (verificação do negócio/número). Em modo `draft`, o destinatário precisa estar cadastrado como **testador** do app.

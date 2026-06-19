@@ -1,6 +1,7 @@
 const DB = require("./data/procedimentos.json");
 const DIAS = ["domingo","segunda-feira","terça-feira","quarta-feira","quinta-feira","sexta-feira","sábado"];
 const pad = n => String(n).padStart(2,"0");
+const normP = x => String(x||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/\s+/g,"").toLowerCase();
 const todayUTC = () => { const d=new Date(); d.setUTCHours(0,0,0,0); return d; };
 const ymd = d => `${d.getUTCFullYear()}-${pad(d.getUTCMonth()+1)}-${pad(d.getUTCDate())}`;
 
@@ -73,7 +74,7 @@ function detailScreen(variantId, plano){
   const pagamento=`💰 Valor: ${v.price}\n${parcelaLine}`;
   let situacao,header;
   if(!plano||plano==="none"){situacao="1";header=pagamento;}
-  else{const cobre=(v.convenios||[]).some(c=>c.toLowerCase()===String(plano).toLowerCase());
+  else{const cobre=(v.convenios||[]).some(c=>normP(c)===normP(plano));
     if(cobre){situacao="2";header=`✅ Procedimento coberto pelo seu plano (${plano}).`;}
     else{situacao="3";header=`⚠️ Este procedimento NÃO é coberto pelo plano ${plano}.\n\n${pagamento}`;}}
   return {screen:"PROCEDURE_DETAILS",data:{
@@ -90,16 +91,34 @@ function validBirth(d,m,a){
   const dt=new Date(Date.UTC(a,m-1,d));
   return dt.getUTCFullYear()===a&&dt.getUTCMonth()===m-1&&dt.getUTCDate()===d;
 }
+function consultaDetail(medId, plano){
+  const m=DB.medicos[medId];
+  const isScheduled=/hora marcada/i.test(m.scheduling_method);
+  const agend=isScheduled?"📅 Atendimento exclusivo com hora marcada. Garanta o seu horário!":"📅 Atendimento por ordem de chegada.";
+  const mm=(m.installments||"").match(/(\d+)\s*vez/);
+  const parcelaLine=mm?`💳 Parcele em ${/até/i.test(m.installments)?"até ":""}${mm[1]}x sem juros no cartão! (Também aceitamos Pix e dinheiro).`:"💳 Pagamento à vista (Pix, cartão ou dinheiro).";
+  const pagamento=`💰 Valor: ${m.price}\n${parcelaLine}`;
+  let situacao,header;
+  if(!plano||plano==="none"){situacao="1";header=pagamento;}
+  else{const cobre=(m.convenios||[]).some(c=>normP(c)===normP(plano));
+    if(cobre){situacao="2";header=`✅ Consulta coberta pelo seu plano (${plano}).`;}
+    else{situacao="3";header=`⚠️ Esta consulta NÃO é coberta pelo plano ${plano}.\n\n${pagamento}`;}}
+  return {screen:"CONSULTA_DETAILS",data:{
+    medico_name:`${m.name} — ${m.especialidade}`,header_info:header,scheduling_info:agend,
+    especialidade:m.especialidade,return_time:m.return_time,documents:m.documents,age_range:m.age_range,duration:m.duration,
+    variant:medId,plano:String(plano||"none"),has_plan:!!plano&&plano!=="none",is_scheduled:isScheduled,scheduling_method:m.scheduling_method,situacao}};
+}
 function getNextScreen(body){
   const {screen,action,data={}}=body;
   if(action==="ping") return {data:{status:"active"}};
   if(data.error) return {data:{acknowledged:true}};
   if(action==="INIT") return {screen:"WELCOME",data:{}};
   if(action!=="data_exchange") return {screen:"WELCOME",data:{}};
-  if([data.need,data.modality,data.bodypart,data.base,data.variant,data.plano,data.decision,data.info_type,data.info_decision].includes("atendente")) return {screen:"ATTENDANT",data:{reason:"Falar com atendente"}};
+  if([data.need,data.modality,data.bodypart,data.base,data.variant,data.plano,data.decision,data.info_type,data.info_decision,data.especialidade].includes("atendente")) return {screen:"ATTENDANT",data:{reason:"Falar com atendente"}};
 
   switch(screen){
     case "NEED":
+      if(data.need==="agendar_consulta") return {screen:"CONSULTA_ESPECIALIDADE",data:{especialidades:withAtd(DB.especialidades)}};
       if(data.need==="resultado_exame") return {screen:"ATTENDANT",data:{reason:"Resultado de exame"}};
       if(data.need==="informacoes") return {screen:"INFO_TYPE",data:{}};
       return {screen:"CHOOSE_MODALITY",data:{modalities:withAtd(DB.modalities)}};
@@ -122,6 +141,7 @@ function getNextScreen(body){
     case "CHOOSE_SPECIFICITY":
       return {screen:"CHOOSE_PLAN",data:{variant:data.variant,planos:planOptions()}};
     case "CHOOSE_PLAN":
+      if(DB.medicos&&DB.medicos[data.variant]) return consultaDetail(data.variant,data.plano);
       return detailScreen(data.variant,data.plano);
     case "PROCEDURE_DETAILS":{
       const d=data.decision;
@@ -186,6 +206,17 @@ function getNextScreen(body){
       const base=DB.bases[data.variant.split("__").slice(0,3).join("__")];
       const name=base.title+(v.spec&&v.spec!=="Padrão"?` – ${v.spec}`:"");
       return infoResult(it,name,fieldValue(v,it));
+    }
+    case "CONSULTA_ESPECIALIDADE":
+      return {screen:"CONSULTA_MEDICO",data:{especialidade:data.especialidade,medicos:withAtd(DB.medicos_by_especialidade[data.especialidade]||[])}};
+    case "CONSULTA_MEDICO":
+      return {screen:"CHOOSE_PLAN",data:{variant:data.variant,planos:planOptions()}};
+    case "CONSULTA_DETAILS":{
+      const d=data.decision;
+      if(d==="consultar_outro") return {screen:"CONSULTA_ESPECIALIDADE",data:{especialidades:withAtd(DB.especialidades)}};
+      if(d==="encerrar") return {screen:"END",data:{}};
+      return {screen:"COLLECT_DATA",data:collectData({procedure_name:data.procedure_name,variant:data.variant,plano:data.plano,
+        has_plan:data.has_plan===true||data.has_plan==="true",is_scheduled:data.is_scheduled===true||data.is_scheduled==="true",scheduling_method:data.scheduling_method})};
     }
     default:
       return {screen:"WELCOME",data:{}};

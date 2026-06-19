@@ -815,12 +815,12 @@
    "has_bodyparts": false,
    "procedures": [
     {
-     "id": "biopsias_____biopsia_de_tireoide_sempre_entrar_em_contato_antes",
-     "title": "Biópsia de tireoide (sempre entrar em contato antes)"
+     "id": "biopsias_____biopsia_de_tireoide",
+     "title": "Biópsia de tireoide"
     },
     {
-     "id": "biopsias_____biopsia_de_mama_sempre_entrar_em_contato_antes",
-     "title": "Biópsia de mama (sempre entrar em contato antes)"
+     "id": "biopsias_____biopsia_de_mama",
+     "title": "Biópsia de mama"
     },
     {
      "id": "biopsias_____biopsia_de_prostata",
@@ -2819,24 +2819,24 @@
     }
    ]
   },
-  "biopsias_____biopsia_de_tireoide_sempre_entrar_em_contato_antes": {
-   "title": "Biópsia de tireoide (sempre entrar em contato antes)",
+  "biopsias_____biopsia_de_tireoide": {
+   "title": "Biópsia de tireoide",
    "modality": "biopsias",
    "bodypart": "_",
    "variants": [
     {
-     "id": "biopsias_____biopsia_de_tireoide_sempre_entrar_em_contato_antes__padrao",
+     "id": "biopsias_____biopsia_de_tireoide__padrao",
      "spec": "Padrão"
     }
    ]
   },
-  "biopsias_____biopsia_de_mama_sempre_entrar_em_contato_antes": {
-   "title": "Biópsia de mama (sempre entrar em contato antes)",
+  "biopsias_____biopsia_de_mama": {
+   "title": "Biópsia de mama",
    "modality": "biopsias",
    "bodypart": "_",
    "variants": [
     {
-     "id": "biopsias_____biopsia_de_mama_sempre_entrar_em_contato_antes__padrao",
+     "id": "biopsias_____biopsia_de_mama__padrao",
      "spec": "Padrão"
     }
    ]
@@ -11446,8 +11446,8 @@
    "duration": "20 minutos",
    "scheduling_method": "Ordem de chegada"
   },
-  "biopsias_____biopsia_de_tireoide_sempre_entrar_em_contato_antes__padrao": {
-   "base_title": "Biópsia de tireoide (sempre entrar em contato antes)",
+  "biopsias_____biopsia_de_tireoide__padrao": {
+   "base_title": "Biópsia de tireoide",
    "spec": "Padrão",
    "price": "R$ 1.100,00",
    "convenios": [],
@@ -11461,8 +11461,8 @@
    "duration": "15 minutos",
    "scheduling_method": "Hora marcada"
   },
-  "biopsias_____biopsia_de_mama_sempre_entrar_em_contato_antes__padrao": {
-   "base_title": "Biópsia de mama (sempre entrar em contato antes)",
+  "biopsias_____biopsia_de_mama__padrao": {
+   "base_title": "Biópsia de mama",
    "spec": "Padrão",
    "price": "R$ 1.500,00",
    "convenios": [],
@@ -11505,6 +11505,42 @@
    "age_range": "Adultos e crianças",
    "duration": "15 minutos",
    "scheduling_method": "Hora marcada"
+  }
+ },
+ "especialidades": [
+  {
+   "id": "esp__clinico_geral",
+   "title": "Clinico Geral"
+  }
+ ],
+ "medicos_by_especialidade": {
+  "esp__clinico_geral": [
+   {
+    "id": "medico__cibele_cristina",
+    "title": "Cibele Cristina"
+   }
+  ]
+ },
+ "medicos": {
+  "medico__cibele_cristina": {
+   "name": "Cibele Cristina",
+   "especialidade": "Clinico Geral",
+   "price": "R$ 300,00",
+   "convenios": [
+    "MedPop",
+    "PPsaude",
+    "MedPrev",
+    "Santa Juliana",
+    "Despachante Barros",
+    "OAB"
+   ],
+   "payment_methods": "Pix, cartão de crédito, cartão de débito e dinheiro.",
+   "installments": "NÃO PARCELAMOS",
+   "return_time": "Confirmar durante a consulta.",
+   "documents": "DOCUMENTO DE INDENTIFICAÇÃO",
+   "scheduling_method": "HORA MARCADA",
+   "age_range": "ADULTOS E CRIANÇAS",
+   "duration": "30 MINUTOS"
   }
  }
 }
