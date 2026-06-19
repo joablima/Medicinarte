@@ -1,17 +1,24 @@
 const express = require("express");
+const fs = require("fs");
+const path = require("path");
 const { decryptRequest, encryptResponse, isSignatureValid } = require("./encryption");
 const { getNextScreen } = require("./flow");
 
 const app = express();
 // guarda o corpo bruto para validar a assinatura do app
 app.use(express.json({ verify: (req, _res, buf) => { req.rawBody = buf; } }));
+// serve arquivos estáticos (ex.: logo) em /public  -> https://SEU_DOMINIO/logo.png
+app.use(express.static(path.join(__dirname, "public")));
 
 const {
   PASSPHRASE = "", APP_SECRET = "", PORT = 3000,
   WHATSAPP_TOKEN = "", PHONE_NUMBER_ID = "1086045857923395",
   FLOW_ID = "", VERIFY_TOKEN = "medicinarte", FLOW_MODE = "draft",
   GRAPH_VERSION = "v21.0",
+  PUBLIC_BASE_URL = "https://medicinarte.onrender.com", LOGO_URL = "",
 } = process.env;
+// URL do logo: usa LOGO_URL se definido; senão, usa public/logo.png se existir
+const logoUrl = LOGO_URL || (fs.existsSync(path.join(__dirname, "public", "logo.png")) ? `${PUBLIC_BASE_URL}/logo.png` : "");
 // aceita a chave com quebras reais OU com \n literais (formato comum em variáveis de ambiente)
 const PRIVATE_KEY = (process.env.PRIVATE_KEY || "").replace(/\\n/g, "\n");
 
@@ -77,27 +84,24 @@ app.post("/webhook", async (req, res) => {
 
 async function sendFlow(to) {
   if (!WHATSAPP_TOKEN || !FLOW_ID) { console.error("Falta WHATSAPP_TOKEN ou FLOW_ID."); return; }
-  const body = {
-    messaging_product: "whatsapp", to, type: "interactive",
-    interactive: {
-      type: "flow",
-      header: { type: "text", text: "Medicinarte" },
-      body: { text: "Olá! 👋 Toque no botão para consultar exames, valores, preparos e solicitar seu agendamento." },
-      footer: { text: "Medicinarte Diagnóstico por Imagem" },
-      action: {
-        name: "flow",
-        parameters: {
-          flow_message_version: "3",
-          flow_token: "medicinarte-" + Date.now(),
-          flow_id: FLOW_ID,
-          flow_cta: "Começar",
-          flow_action: "navigate",
-          flow_action_payload: { screen: "WELCOME" },
-          mode: FLOW_MODE,
-        },
+  const interactive = {
+    type: "flow",
+    header: logoUrl ? { type: "image", image: { link: logoUrl } } : { type: "text", text: "Medicinarte" },
+    body: { text: "Olá, que bom ter você por aqui! Por aqui, você terá acesso a todos os nossos serviços. 💙\n\nClique em iniciar atendimento para fazer o seu agendamento, ver resultados de exames ou tirar dúvidas com nossos atendentes." },
+    action: {
+      name: "flow",
+      parameters: {
+        flow_message_version: "3",
+        flow_token: "medicinarte-" + Date.now(),
+        flow_id: FLOW_ID,
+        flow_cta: "Iniciar Atendimento",
+        flow_action: "navigate",
+        flow_action_payload: { screen: "WELCOME" },
+        mode: FLOW_MODE,
       },
     },
   };
+  const body = { messaging_product: "whatsapp", to, type: "interactive", interactive };
   const r = await fetch(`https://graph.facebook.com/${GRAPH_VERSION}/${PHONE_NUMBER_ID}/messages`, {
     method: "POST",
     headers: { Authorization: `Bearer ${WHATSAPP_TOKEN}`, "Content-Type": "application/json" },
