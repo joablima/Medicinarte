@@ -871,12 +871,16 @@
                 "label": "CPF",
                 "name": "cpf",
                 "input-type": "text",
-                "required": true,
-                "helper-text": "Formato: 013.444.212-10 (digite os números)"
+                "required": true
+              },
+              {
+                "type": "TextSubheading",
+                "text": "Nº da carteira do plano",
+                "visible": "${data.has_plan}"
               },
               {
                 "type": "TextInput",
-                "label": "Carteira do plano",
+                "label": "Número",
                 "name": "carteira",
                 "input-type": "text",
                 "required": false,
@@ -888,28 +892,32 @@
               },
               {
                 "type": "TextInput",
-                "label": "Dia (1-31)",
+                "label": "Dia",
                 "name": "nasc_dia",
                 "input-type": "number",
                 "required": true
               },
               {
                 "type": "TextInput",
-                "label": "Mês (1-12)",
+                "label": "Mês",
                 "name": "nasc_mes",
                 "input-type": "number",
                 "required": true
               },
               {
                 "type": "TextInput",
-                "label": "Ano (1920-2026)",
+                "label": "Ano",
                 "name": "nasc_ano",
                 "input-type": "number",
                 "required": true
               },
               {
+                "type": "TextSubheading",
+                "text": "Data do atendimento"
+              },
+              {
                 "type": "DatePicker",
-                "label": "Data do atendimento",
+                "label": "Data",
                 "name": "data_agendamento",
                 "required": true,
                 "min-date": "${data.min_date}",
@@ -1246,6 +1254,7 @@
                 "on-click-action": {
                   "name": "complete",
                   "payload": {
+                    "status": "atendente",
                     "name": "${data.name}"
                   }
                 }
