@@ -85,12 +85,6 @@ function detailScreen(variantId, plano){
     has_plan:!!plano&&plano!=="none",is_scheduled:isScheduled,scheduling_method:v.scheduling_method,situacao}};
 }
 
-function validBirth(d,m,a){
-  if(!Number.isInteger(d)||!Number.isInteger(m)||!Number.isInteger(a)) return false;
-  if(m<1||m>12||a<1920||a>2026||d<1||d>31) return false;
-  const dt=new Date(Date.UTC(a,m-1,d));
-  return dt.getUTCFullYear()===a&&dt.getUTCMonth()===m-1&&dt.getUTCDate()===d;
-}
 function consultaDetail(medId, plano){
   const m=DB.medicos[medId];
   const isScheduled=/hora marcada/i.test(m.scheduling_method);
@@ -162,11 +156,17 @@ function getNextScreen(body){
           error_message:"❌ CPF inválido. Confira e digite novamente (apenas os 11 números)."})};
       }
       const dia=parseInt(data.nasc_dia,10),mes=parseInt(data.nasc_mes,10),ano=parseInt(data.nasc_ano,10);
-      if(!validBirth(dia,mes,ano)){
+      const anoAtual=new Date().getUTCFullYear();
+      let birthErr=null;
+      if(!(dia>=1&&dia<=31)) birthErr="❌ Dia de nascimento inválido.";
+      else if(!(mes>=1&&mes<=12)) birthErr="❌ Mês de nascimento inválido.";
+      else if(!(ano>=1930&&ano<=anoAtual)) birthErr="❌ Ano de nascimento inválido.";
+      else { const dt=new Date(Date.UTC(ano,mes-1,dia)); if(!(dt.getUTCFullYear()===ano&&dt.getUTCMonth()===mes-1&&dt.getUTCDate()===dia)) birthErr="❌ Dia de nascimento inválido."; }
+      if(birthErr){
         return {screen:"COLLECT_DATA",data:collectData({
           procedure_name:data.procedure_name,plano:data.plano,
           has_plan:!!data.plano&&data.plano!=="none",is_scheduled:isSched,scheduling_method:data.scheduling_method,
-          error_message:"❌ Data de nascimento inválida. Verifique dia (1-31), mês (1-12) e ano (1920-2026)."})};
+          error_message:birthErr})};
       }
       const nascimento=`${pad(dia)}/${pad(mes)}/${ano}`;
       const common={procedure_name:data.procedure_name,name:data.nome||"",cpf:formatCPF(data.cpf),carteira:data.carteira||"",
